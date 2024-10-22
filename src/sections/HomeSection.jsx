@@ -17,7 +17,7 @@ const HomeSection = () => {
         >
             {/* Imagen del taller */}
             <img 
-                src="/assets/workshop-banner.jpg" 
+                src="/assets/workshop-banner.png" 
                 alt="Taller" 
                 style={{ 
                     width: '100%', 
