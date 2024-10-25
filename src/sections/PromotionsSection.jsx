@@ -1,19 +1,18 @@
-// src/sections/PromotionsSection.js
 import React from 'react';
 import { Container, Typography, Paper, Button } from '@mui/material';
 
 const promotions = [
     { 
-        title: "Alineación y Balanceo Gratis", 
-        description: "Obtén alineación y balanceo gratuitos con la compra de 4 neumáticos y el cambio de frenos.", 
+        title: "20% de Descuento en Alineación y Balanceo", 
+        description: "Aprovecha un 20% de descuento en nuestros servicios de alineación y balanceo durante todo el mes.", 
         buttonText: "Ver más",
         buttonLink: "#services",
     },
     { 
-        title: "Descuento en Frenos", 
-        description: "Aprovecha nuestros descuentos especiales en servicios de frenos durante este mes.", 
-        buttonText: "Cotiza ahora",
-        buttonLink: "#contact",
+        title: "Control Pre VTV - Sin Cargo", 
+        description: "Obtén un control pre VTV gratuito al seguirnos y compartir nuestro Instagram. ¡Aprovecha esta oferta exclusiva!", 
+        buttonText: "Síguenos en Instagram",
+        buttonLink: "#contact", // Cambia el enlace a la página de Instagram o contacto si es necesario
     },
 ];
 

@@ -1,28 +1,34 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, IconButton, Typography, Menu, MenuItem, Button, useMediaQuery } from '@mui/material';
+import { AppBar, Toolbar, IconButton, Menu, MenuItem, Button, useMediaQuery } from '@mui/material';
 import { Menu as MenuIcon } from '@mui/icons-material';
-import { Link } from 'react-scroll'; // Para scroll suave a secciones
+import { Link } from 'react-scroll';
+import banerfm from '../assets/banerfm.png';
 
 const Navbar = () => {
-  const [anchorEl, setAnchorEl] = useState(null);
-  const isMobile = useMediaQuery('(max-width:600px)'); // Detecta si es móvil
+  const [menuOpen, setMenuOpen] = useState(false); // Estado para el menú
+  const isMobile = useMediaQuery('(max-width:600px)');
 
-  // Función para abrir el menú en móviles
-  const handleMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget);
+  const handleMenuToggle = () => {
+    setMenuOpen(!menuOpen);
   };
 
-  // Función para cerrar el menú en móviles
   const handleMenuClose = () => {
-    setAnchorEl(null);
+    setMenuOpen(false);
   };
 
   return (
-    <AppBar position="static" style={{ backgroundColor: '#E53935' }}> 
-      <Toolbar>
-        <Typography variant="h6" style={{ flexGrow: 1 }}>
-          FMSuspensión
-        </Typography>
+    <AppBar position="static" style={{ backgroundColor: 'black' }}>
+      <Toolbar style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        {/* Ajusta la imagen del banner */}
+        <img 
+          src={banerfm} 
+          alt="Banner FMSuspensión" 
+          style={{ 
+            height: '80px',   // Reducir la altura a 80px para hacerla menos alta
+            width: '100%',    // Ocupa el 100% del ancho del contenedor para hacerla más larga
+            objectFit: 'cover' // Ajusta la imagen para cubrir el espacio sin deformarse
+          }} 
+        />
         {isMobile ? (
           // Vista para móviles con menú hamburguesa
           <>
@@ -30,35 +36,34 @@ const Navbar = () => {
               edge="end"
               color="inherit"
               aria-label="menu"
-              onClick={handleMenuOpen}
-              style={{ marginLeft: 'auto' }} // Mueve el menú hamburguesa a la derecha
+              onClick={handleMenuToggle}
             >
               <MenuIcon />
             </IconButton>
             <Menu
               id="mobile-menu"
-              anchorEl={anchorEl}
+              anchorEl={null} // No es necesario un anchorEl en este caso
               keepMounted
-              open={Boolean(anchorEl)}
+              open={menuOpen}
               onClose={handleMenuClose}
             >
               <MenuItem onClick={handleMenuClose}>
-                <Link to="inicio" smooth={true} duration={500}>Inicio</Link>
+                <Link to="inicio" smooth={true} duration={500} offset={-70}>Inicio</Link>
               </MenuItem>
               <MenuItem onClick={handleMenuClose}>
-                <Link to="servicios" smooth={true} duration={500}>Servicios</Link>
+                <Link to="servicios" smooth={true} duration={500} offset={-70}>Servicios</Link>
               </MenuItem>
               <MenuItem onClick={handleMenuClose}>
-                <Link to="testimonios" smooth={true} duration={500}>Testimonios</Link>
+                <Link to="testimonios" smooth={true} duration={500} offset={-70}>Testimonios</Link>
               </MenuItem>
               <MenuItem onClick={handleMenuClose}>
-                <Link to="contacto" smooth={true} duration={500}>Contacto</Link>
+                <Link to="contacto" smooth={true} duration={500} offset={-70}>Contacto</Link>
               </MenuItem>
             </Menu>
           </>
         ) : (
           // Vista para desktop con botones directos
-          <>
+          <div style={{ display: 'flex', gap: '15px' }}>
             <Button color="inherit">
               <Link to="inicio" smooth={true} duration={500} style={{ color: '#FFFFFF' }}>Inicio</Link>
             </Button>
@@ -71,7 +76,7 @@ const Navbar = () => {
             <Button color="inherit">
               <Link to="contacto" smooth={true} duration={500} style={{ color: '#FFFFFF' }}>Contacto</Link>
             </Button>
-          </>
+          </div>
         )}
       </Toolbar>
     </AppBar>
