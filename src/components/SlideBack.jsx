@@ -2,7 +2,7 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper/modules';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons'; // Importa el ícono de ubicación
+import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -60,16 +60,33 @@ const SlideBack = () => {
       {/* Bloque de texto fijo */}
       <div className="slide-back__content">
         {/* Ícono de ubicación */}
-        
-        <p> <FontAwesomeIcon icon={faMapMarkerAlt} className="location-icon" 
-        />  Ituzaingó 5848, Mar del Plata</p>
+        <p>
+          <FontAwesomeIcon icon={faMapMarkerAlt} className="location-icon" /> 
+          Ituzaingó 5848, Mar del Plata
+        </p>
         <p>Desde hace más de 15 años solucionando las necesidades de tu auto.</p>
 
         <ul className="services-list">
-          <a><span className="arrow-icon">→</span> Alineación</a>
-          <a><span className="arrow-icon">→</span> Balanceo</a>
-          <a><span className="arrow-icon">→</span> Frenos</a>
-          <a><span className="arrow-icon">→</span> Mecánica en general</a>
+          <li>
+            <button className="service-button" onClick={() => alert('Alineación seleccionada')}>
+              <span className="arrow-icon">→</span> Alineación
+            </button>
+          </li>
+          <li>
+            <button className="service-button" onClick={() => alert('Balanceo seleccionado')}>
+              <span className="arrow-icon">→</span> Balanceo
+            </button>
+          </li>
+          <li>
+            <button className="service-button" onClick={() => alert('Frenos seleccionados')}>
+              <span className="arrow-icon">→</span> Frenos
+            </button>
+          </li>
+          <li>
+            <button className="service-button" onClick={() => alert('Mecánica en general seleccionada')}>
+              <span className="arrow-icon">→</span> Mecánica en general
+            </button>
+          </li>
         </ul>
 
         <button className="contact-button" onClick={() => window.location.href = "mailto:contacto@fmsuspension.com"}>
