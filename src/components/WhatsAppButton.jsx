@@ -3,7 +3,7 @@ import React from 'react';
 import whatsappIcon from '../assets/whatsapp-icon.png'; // Asegúrate de que esta es la ruta correcta
 
 const WhatsAppButton = () => {
-    const phoneNumber = "549XXXXXXXXXX"; // Reemplaza con el número real
+    const phoneNumber = "+54 9 223 600-3351"; // Reemplaza con el número real
     const message = "Hola, estoy interesado en los servicios de FMSuspensión.";
 
     return (
