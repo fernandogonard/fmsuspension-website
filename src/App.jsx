@@ -10,6 +10,7 @@ import ServicesComponent from './sections/ServicesComponent';
 import TestimonialsSection from './sections/TestimonialsSection';
 import ContactSection from './sections/ContactSection';
 import PromotionsSection from './sections/PromotionsSection';
+import AboutUs from './components/AboutUs';  // <--- Importa el nuevo componente
 import Navbar from './components/Navbar';
 import SlideBack from './components/SlideBack';
 import './components/SlideBack.css';
@@ -42,9 +43,10 @@ function App() {
             <SlideBack />
             <ServicesComponent />
             <PromotionsSection />
+            <AboutUs /> {/* <--- Agrega el componente aquí */} 
             <TestimonialsSection />
             <ContactSection />
-            <MapContainer /> {/* Eliminado {} */}
+            <MapContainer />
             <WhatsAppButton />
             <Footer />
         </ThemeProvider>
