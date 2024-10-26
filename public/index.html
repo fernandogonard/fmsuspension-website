@@ -8,11 +8,39 @@
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" />
-    <link rel="stylesheet" href="App.css" /> <!-- Asegúrate de que el archivo styles.css esté en la misma carpeta -->
+    <link rel="stylesheet" href="App.css" /> <!-- Asegúrate de que el archivo App.css esté en la misma carpeta -->
     <title>FMSuspensión - Taller de Reparación</title>
+    <style>
+        /* CSS básico para el menú hamburguesa */
+        #menu {
+            display: none; /* Ocultar por defecto */
+            background-color: #fff; /* Color de fondo del menú */
+            position: absolute; /* Posicionar el menú */
+            top: 50px; /* Ajusta según tu diseño */
+            right: 10px; /* Ajusta según tu diseño */
+            border: 1px solid #ccc; /* Añadir borde */
+            z-index: 1000; /* Asegurar que se muestre por encima de otros elementos */
+        }
+
+        #menu.hidden {
+            display: none; /* Ocultar el menú */
+        }
+
+        .menu-hamburguesa {
+            cursor: pointer; /* Cambiar cursor al pasar sobre el botón */
+        }
+    </style>
 </head>
 <body>
- 
+    <div class="menu-hamburguesa">☰</div> <!-- Botón de menú hamburguesa -->
+    <div id="menu" class="hidden">
+        <ul>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#cotizaciones">Cotizaciones</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </div>
+
     <div id="root"></div>
 
     <script>
@@ -26,7 +54,7 @@
                 menu.classList.toggle('hidden');
             }
 
-            // Close menu if clicked outside
+            // Cerrar el menú si se hace clic fuera de él
             document.addEventListener('click', function (event) {
                 if (!menu.contains(event.target) && !menuButton.contains(event.target)) {
                     menu.classList.add('hidden');

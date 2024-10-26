@@ -6,7 +6,11 @@
   position: auto;
   overflow: hidden;
 }
-
+.slide {
+  position: absolute; /* Asegúrate de usar una posición válida */
+  font-size: 16px; /* Ajusta el tamaño de fuente correctamente */
+  /* Agrega otras reglas según sea necesario */
+}
 .slide-back__image {
   width: 100%;
   height: 150%; /* Asegúrate de que cada imagen ocupe todo el contenedor */

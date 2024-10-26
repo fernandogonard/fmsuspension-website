@@ -50,7 +50,7 @@ const Footer = () => {
                         <InstagramIcon />
                     </IconButton>
                     <IconButton
-                        href="https://www.facebook.com/fm_suspension"
+                        href="https://www.facebook.com/profile.php?id=61567521662015"
                         target="_blank"
                         sx={{ color: '#BDBDBD', transition: 'color 0.3s', marginRight: '10px', '&:hover': { color: '#3b5998' } }}>
                         <FacebookIcon />

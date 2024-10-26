@@ -4,14 +4,16 @@ import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 import './App.css';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
+import MapContainer from './components/MapContainer';
 
 import ServicesComponent from './sections/ServicesComponent';
 import TestimonialsSection from './sections/TestimonialsSection';
 import ContactSection from './sections/ContactSection';
-import PromotionsSection from './sections/PromotionsSection'; // Nueva sección importada
-import Navbar from './components/Navbar'; // Nueva sección importada
+import PromotionsSection from './sections/PromotionsSection';
+import Navbar from './components/Navbar';
 import SlideBack from './components/SlideBack';
-import './components/SlideBack.css'; // Importa los estilos
+import './components/SlideBack.css';
+
 // Define la paleta de colores
 const theme = createTheme({
     palette: {
@@ -38,11 +40,11 @@ function App() {
             <CssBaseline />
             <Navbar />
             <SlideBack />
-            
-            <ServicesComponent /> {/* Use ServicesComponent instead of ServicesSection */}
-            <PromotionsSection /> {/* Sección de promociones añadida */}
+            <ServicesComponent />
+            <PromotionsSection />
             <TestimonialsSection />
             <ContactSection />
+            <MapContainer /> {/* Eliminado {} */}
             <WhatsAppButton />
             <Footer />
         </ThemeProvider>

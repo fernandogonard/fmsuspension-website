@@ -1,0 +1,11 @@
+/* MapContainer.css */
+.map-container {
+    width: 100%; /* Toma el ancho completo del contenedor anterior */
+    height: 300px; /* Ajusta la altura para que sea más visible */
+    /* Centra el mapa y agrega espacio superior e inferior */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+ 
