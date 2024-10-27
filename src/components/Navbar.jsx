@@ -23,8 +23,9 @@ const Navbar = () => {
           src={banerfm} 
           alt="Banner FMSuspensión" 
           style={{ 
-            height: '80px', 
+            height: 'auto', 
             width: '100%', 
+            maxWidth: '250px',  // Ajusta el tamaño máximo para que no ocupe demasiado espacio
             objectFit: 'cover' 
           }} 
         />
