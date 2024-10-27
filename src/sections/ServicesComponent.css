@@ -1,4 +1,10 @@
 /* ServicesComponent.css */
+h1 {
+  color: #E53935;
+  font-weight: 700;
+  margin: 20px 0; /* Espaciado superior e inferior */
+  text-align: center; /* Centra el texto */
+}
 
 .services-container {
     display: grid;

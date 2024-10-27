@@ -1,6 +1,7 @@
 // src/App.jsx
 import React, { Suspense } from 'react';
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
+import { Element } from 'react-scroll'; // Importa Element para la navegación
 import './App.css';
 import './components/SlideBack.css';
 
@@ -41,11 +42,25 @@ function App() {
             <Suspense fallback={<div>Cargando...</div>}>
                 <Navbar />
                 <SlideBack />
-                <ServicesComponent />
-                <PromotionsSection />
-                <AboutUs />
-                <TestimonialsSection />
-                <ContactSection />
+                <Element name="inicio">
+                    
+                </Element>
+                <Element name="servicios">
+                <h1>Nuestros Servicios</h1>
+                    <ServicesComponent />
+                </Element>
+                <Element name="promociones">
+                    <PromotionsSection />
+                </Element>
+                <Element name="sobre-nosotros">
+                    <AboutUs />
+                </Element>
+                <Element name="testimonios">
+                    <TestimonialsSection />
+                </Element>
+                <Element name="contacto">
+                    <ContactSection />
+                </Element>
                 <MapContainer />
                 <WhatsAppButton />
                 <Footer />
