@@ -1,19 +1,23 @@
-/* === General Styles === */
+/* Estilos Generales */
 body {
-    background-color: #000000; /* Fondo negro */
-    color: #FFFFFF; /* Texto blanco */
+    background-color: #000000;
+    color: #FFFFFF;
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #E53935; /* Color rojo vibrante para encabezados */
+    color: #E53935;
     font-weight: 700;
 }
 
-p, span {
-    color: #FFFFFF; /* Texto principal en blanco */
+p {color:
+    #ffffff;
+}
+ span {
+    color: #FFFFFF;
+    font-weight: 500;
 }
 
 /* === Buttons === */
@@ -28,25 +32,14 @@ p, span {
 }
 
 .button-primary:hover {
-    background-color: #D32F2F; /* Sutil cambio de color al pasar el ratón */
+    background-color: #D32F2F;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-/* === Links === */
-a {
-    color: #E53935;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: #FFFFFF;
 }
 
 /* === Footer === */
 .footer {
     background-color: #424242;
-    color: #BDBDBD; /* Gris claro para el texto en el footer */
+    color: #BDBDBD;
     padding: 20px;
     text-align: center;
 }
@@ -57,47 +50,11 @@ a:hover {
 }
 
 .footer a:hover {
-    color: #FFFFFF; /* Cambia a blanco al pasar el ratón */
-}
-
-/* === Social Media Icons === */
-.social-icon {
-    transition: background-color 0.3s ease;
-}
-
-.social-icon-instagram:hover {
-    background-color: #E1306C; /* Color característico de Instagram */
-}
-
-.social-icon-facebook:hover {
-    background-color: #3b5998; /* Color característico de Facebook */
-}
-
-.social-icon-twitter:hover {
-    background-color: #1DA1F2; /* Color característico de Twitter */
-}
-
-/* === Cards === */
-.card {
-    background-color: #424242;
     color: #FFFFFF;
-    padding: 16px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra suave para profundidad */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px); /* Elevación sutil al pasar el ratón */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 /* === Responsive Design === */
 @media (max-width: 768px) {
-    .header, .footer {
-        text-align: center;
-    }
-
     .button-primary {
         width: 100%;
         padding: 14px;
@@ -121,48 +78,4 @@ a:hover {
 
 .navbar a:hover {
     color: #E53935;
-}
-
-.menu-hamburger {
-    display: none;
-    cursor: pointer;
-    color: #FFFFFF;
-    font-size: 1.5em;
-    transition: transform 0.3s ease;
-}
-
-.menu-hamburger:hover {
-    transform: scale(1.1);
-}
-
-/* === Mobile Navigation === */
-@media (max-width: 768px) {
-    .menu-hamburger {
-        display: block;
-    }
-
-    .navbar-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: #000000;
-        text-align: center;
-    }
-
-    .navbar-links.show {
-        display: flex;
-    }
-}
-
-/* === Images === */
-img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-}
-
-img:hover {
-    transform: scale(1.05); /* Zoom sutil en las imágenes al pasar el ratón */
 }

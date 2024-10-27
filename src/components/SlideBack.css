@@ -35,6 +35,30 @@
   z-index: 2; /* Asegúrate de que esté por encima de la imagen de fondo */
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Sombra para mejor contraste */
 }
+/* Responsivo para pantallas grandes */
+@media (min-width: 1024px) {
+  .slide-back__content {
+    font-size: 2.5rem; /* Aumenta el tamaño en pantallas grandes */
+  }
+}
+
+/* Responsivo para pantallas medianas (tabletas) */
+@media (max-width: 1023px) and (min-width: 768px) {
+  .slide-back__content {
+    font-size: 2rem; /* Tamaño de fuente estándar para tabletas */
+    top: 55%; /* Ajuste de posición */
+  }
+}
+
+/* Responsivo para pantallas pequeñas (móviles) */
+@media (max-width: 767px) {
+  .slide-back__content {
+    font-size: 1.5rem; /* Disminuye el tamaño para móviles */
+    top: 50%; /* Ajuste de posición */
+    padding: 0 10px; /* Añade un poco de espacio lateral para que el texto no se recorte */
+  }
+}
+
 /* Estilo para el ícono de ubicación */
 .location-icon {
   color: #E53935; /* Rojo vibrante */

@@ -43,7 +43,7 @@ function App() {
             <SlideBack />
             <ServicesComponent />
             <PromotionsSection />
-            <AboutUs /> {/* <--- Agrega el componente aquí */} 
+            <AboutUs /> 
             <TestimonialsSection />
             <ContactSection />
             <MapContainer />
