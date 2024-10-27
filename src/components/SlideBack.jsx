@@ -30,7 +30,7 @@ const slidesData = [
 
 const SlideBack = () => {
   return (
-    <div className="slide-back">
+    <div className="slide-back" role="region" aria-label="Presentación de servicios">
       <Swiper
         modules={[Navigation, Pagination, EffectFade, Autoplay]}
         spaceBetween={30}
@@ -50,6 +50,7 @@ const SlideBack = () => {
               style={{
                 backgroundImage: `url(${slide.image})`,
               }}
+              aria-hidden="true" // Este div no es interactivo
             ></div>
           </SwiperSlide>
         ))}
@@ -64,29 +65,24 @@ const SlideBack = () => {
         <p>Desde hace más de 15 años solucionando las necesidades de tu auto.</p>
 
         <ul className="services-list">
-          <li>
-            <button className="service-button" onClick={() => alert('Alineación seleccionada')}>
-              <span className="arrow-icon">→</span> Alineación
-            </button>
-          </li>
-          <li>
-            <button className="service-button" onClick={() => alert('Balanceo seleccionado')}>
-              <span className="arrow-icon">→</span> Balanceo
-            </button>
-          </li>
-          <li>
-            <button className="service-button" onClick={() => alert('Frenos seleccionados')}>
-              <span className="arrow-icon">→</span> Frenos
-            </button>
-          </li>
-          <li>
-            <button className="service-button" onClick={() => alert('Mecánica en general seleccionada')}>
-              <span className="arrow-icon">→</span> Mecánica en general
-            </button>
-          </li>
+          {['Alineación', 'Balanceo', 'Frenos', 'Mecánica en general'].map((service, index) => (
+            <li key={index}>
+              <button
+                className="service-button"
+                onClick={() => alert(`${service} seleccionada`)}
+                aria-label={`Seleccionar servicio de ${service}`}
+              >
+                <span className="arrow-icon">→</span> {service}
+              </button>
+            </li>
+          ))}
         </ul>
 
-        <button className="contact-button" onClick={() => window.location.href = "mailto:contacto@fmsuspension.com"}>
+        <button
+          className="contact-button"
+          onClick={() => window.location.href = "mailto:contacto@fmsuspension.com"}
+          aria-label="Enviar un correo electrónico para contactarnos"
+        >
           Contáctanos
         </button>
       </div>

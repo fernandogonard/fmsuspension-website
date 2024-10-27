@@ -21,20 +21,21 @@ const Navbar = () => {
       <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <img 
           src={banerfm} 
-          alt="Banner FMSuspensión" 
+          alt="Banner de FMSuspensión - Servicios de suspensión" 
           style={{ 
             height: 'auto', 
             width: '100%', 
             maxWidth: '250px',  // Ajusta el tamaño máximo para que no ocupe demasiado espacio
             objectFit: 'cover' 
           }} 
+          aria-label="Logo de FMSuspensión"
         />
         {isMobile ? (
           <>
             <IconButton
               edge="end"
               color="inherit"
-              aria-label="menu"
+              aria-label="Abrir menú"
               onClick={handleMenuToggle}
             >
               <MenuIcon />
@@ -47,7 +48,13 @@ const Navbar = () => {
             >
               {['Inicio', 'Servicios', 'Testimonios', 'Contacto'].map((section, index) => (
                 <MenuItem key={index} onClick={handleMenuClose}>
-                  <Link to={section.toLowerCase()} smooth duration={500} offset={-70}>
+                  <Link 
+                    to={section.toLowerCase()} 
+                    smooth 
+                    duration={500} 
+                    offset={-70}
+                    aria-label={`Ir a sección ${section}`}
+                  >
                     {section}
                   </Link>
                 </MenuItem>
@@ -58,7 +65,13 @@ const Navbar = () => {
           <div style={{ display: 'flex', gap: '15px' }}>
             {['Inicio', 'Servicios', 'Testimonios', 'Contacto'].map((section, index) => (
               <Button key={index} color="inherit">
-                <Link to={section.toLowerCase()} smooth duration={500} style={{ color: '#FFFFFF' }}>
+                <Link 
+                  to={section.toLowerCase()} 
+                  smooth 
+                  duration={500} 
+                  style={{ color: '#FFFFFF' }}
+                  aria-label={`Ir a sección ${section}`}
+                >
                   {section}
                 </Link>
               </Button>

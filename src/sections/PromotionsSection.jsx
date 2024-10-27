@@ -19,10 +19,10 @@ const promotions = [
 const PromotionsSection = () => {
     return (
         <Container id="promotions" sx={{ padding: '50px 0', backgroundColor: '#424242', textAlign: 'center' }}>
-            <Typography variant="h4" gutterBottom color="secondary">
+            <Typography variant="h4" gutterBottom color="secondary" component="h2" aria-labelledby="promotions-title">
                 Ofertas Especiales
             </Typography>
-            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }} role="region" aria-labelledby="promotions">
                 {promotions.map((promo, index) => (
                     <Paper
                         key={index}
@@ -35,8 +35,10 @@ const PromotionsSection = () => {
                             transition: 'transform 0.3s',
                             '&:hover': { transform: 'scale(1.05)' },
                         }}
+                        role="article"
+                        aria-labelledby={`promo-title-${index}`}
                     >
-                        <Typography variant="h6" color="#E53935">
+                        <Typography variant="h6" color="#E53935" id={`promo-title-${index}`}>
                             {promo.title}
                         </Typography>
                         <Typography variant="body2" gutterBottom>
@@ -50,6 +52,8 @@ const PromotionsSection = () => {
                                 marginTop: '10px',
                                 '&:hover': { backgroundColor: '#BDBDBD', color: '#E53935' },
                             }}
+                            target="_self" // Cambia a "_blank" si es un enlace externo
+                            rel="noopener noreferrer" // Añadir seguridad si es un enlace externo
                         >
                             {promo.buttonText}
                         </Button>

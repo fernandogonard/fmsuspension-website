@@ -1,8 +1,7 @@
-// MapContainer.jsx
 import React from 'react';
 import './MapContainer.css';
-export default function MapContainer() {
 
+export default function MapContainer() {
   return (
     <div style={{ position: 'relative', zIndex: 3, width: '100vw', height: '100vh' }}>
       <iframe
@@ -14,7 +13,11 @@ export default function MapContainer() {
         allowFullScreen
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
+        aria-label="Mapa de ubicación de FMSuspensión en Mar del Plata, Argentina"
       ></iframe>
+      <div className="map-description" style={{ position: 'absolute', bottom: '10px', left: '10px', color: '#FFF', backgroundColor: '#333', padding: '10px', borderRadius: '5px' }}>
+        Ubicación de FMSuspensión: Ituzaingó 5848, Mar del Plata, Argentina.
+      </div>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 // src/App.jsx
 import React, { Suspense } from 'react';
-import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
+import { CssBaseline, ThemeProvider, createTheme, CircularProgress } from '@mui/material';
 import { Element } from 'react-scroll'; // Importa Element para la navegación
 import './App.css';
 import './components/SlideBack.css';
@@ -39,14 +39,11 @@ function App() {
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline />
-            <Suspense fallback={<div>Cargando...</div>}>
+            <Suspense fallback={<div style={{ textAlign: 'center', padding: '50px' }}><CircularProgress color="primary" /></div>}>
                 <Navbar />
                 <SlideBack />
-                <Element name="inicio">
-                    
-                </Element>
+                <Element name="inicio" />
                 <Element name="servicios">
-                <h1>Nuestros Servicios</h1>
                     <ServicesComponent />
                 </Element>
                 <Element name="promociones">

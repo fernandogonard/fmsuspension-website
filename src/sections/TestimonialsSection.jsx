@@ -12,14 +12,23 @@ const testimonials = [
 
 const TestimonialsSection = () => {
     return (
-        <Container id="testimonials" sx={{ padding: '50px 0', backgroundColor: '#000000', color: '#FFFFFF' }}>
-            <Typography variant="h4" gutterBottom color="secondary" align="center">
+        <Container 
+            id="testimonials" 
+            sx={{ padding: '50px 0', backgroundColor: '#000000', color: '#FFFFFF' }}
+        >
+            <Typography 
+                variant="h4" 
+                gutterBottom 
+                color="secondary" 
+                align="center"
+            >
                 Testimonios de Clientes
             </Typography>
             <Carousel
                 indicators={false}
                 navButtonsAlwaysVisible={true}
                 sx={{ width: '100%', maxWidth: '600px', margin: '0 auto' }}
+                aria-label="Testimonios de clientes"
             >
                 {testimonials.map((testimonial, index) => (
                     <Paper
@@ -42,13 +51,20 @@ const TestimonialsSection = () => {
                                     backgroundColor: '#424242',
                                     marginBottom: '10px',
                                 }}
+                                aria-label={`Avatar de ${testimonial.name}`}
                             >
                                 <PersonIcon />
                             </Avatar>
-                            <Typography variant="body1" sx={{ fontStyle: 'italic', marginBottom: '10px' }}>
+                            <Typography 
+                                variant="body1" 
+                                sx={{ fontStyle: 'italic', marginBottom: '10px' }}
+                            >
                                 "{testimonial.feedback}"
                             </Typography>
-                            <Typography variant="subtitle2" sx={{ fontWeight: 'bold' }}>
+                            <Typography 
+                                variant="subtitle2" 
+                                sx={{ fontWeight: 'bold' }}
+                            >
                                 - {testimonial.name}
                             </Typography>
                         </Box>

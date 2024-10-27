@@ -1,12 +1,13 @@
+// src/components/AboutUs.jsx
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Box, Typography, Container, Card, CardContent } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 
-// Custom styles using makeStyles from Material UI
 const useStyles = makeStyles((theme) => ({
   root: {
     padding: theme.spacing(4),
-    backgroundColor: 'black',
+    backgroundColor: '#f4f4f4',
     color: 'black',
   },
   header: {
@@ -50,44 +51,55 @@ export default function AboutUs() {
   const classes = useStyles();
 
   return (
-    <Box className={classes.root}>
-      <Container maxWidth="md">
-        <Typography variant="h4" className={classes.header}>
-          Sobre Nosotros
-        </Typography>
+    <>
+      <Helmet>
+        <title>Sobre Nosotros | Mecánicos de Corazón en Mar del Plata</title>
+        <meta
+          name="description"
+          content="Mecánicos de Corazón, una empresa marplatense fundada por hermanos apasionados por la mecánica, ofrece servicios mecánicos de alta calidad y tecnología de punta."
+        />
+        <meta
+          name="keywords"
+          content="mecánica, reparación de autos, Mar del Plata, mecánicos de confianza, mantenimiento de autos"
+        />
+        <meta name="robots" content="index,follow" />
+      </Helmet>
 
-        <Card className={classes.card}>
-          <Box className={classes.imageWrapper}>
-          <img
-  src="/assets/quienessomos.jpg"
-  alt="Mecánicos de Corazón, desde Mar del Plata"
-  className={classes.image}
-/>
+      <Box className={classes.root} component="section" aria-labelledby="about-us-title">
+        <Container maxWidth="md">
+          <Typography variant="h4" className={classes.header} id="about-us-title">
+            Sobre Nosotros
+          </Typography>
 
-          </Box>
-          <CardContent className={classes.textWrapper}>
-            <Typography variant="h6" gutterBottom>
-              Mecánicos de Corazón, desde Mar del Plata
-            </Typography>
-            <Typography variant="body1" className={classes.content}>
-              Fundada por dos hermanos con una pasión profunda por la mecánica,
-              nuestra empresa combina tradición e innovación en cada servicio.
-              Con años de experiencia en el taller y un compromiso constante con
-              la excelencia, ofrecemos soluciones mecánicas de primer nivel,
-              pensadas para las necesidades actuales. Como marplatenses,
-              aportamos una perspectiva única y cercana, que nos diferencia en
-              el rubro.
-            </Typography>
-            <Typography variant="body1" className={classes.content}>
-              Nuestra misión es brindar soluciones mecánicas confiables y de
-              alta calidad para que puedas seguir adelante con tranquilidad.
-              Combinamos tecnología de punta con un trato al cliente que podés
-              confiar, ya sea para una reparación compleja o un mantenimiento de
-              rutina.
-            </Typography>
-          </CardContent>
-        </Card>
-      </Container>
-    </Box>
+          <Card className={classes.card} component="article">
+            <Box className={classes.imageWrapper}>
+              <img
+                src="/assets/quienessomos.jpg"
+                alt="Equipo de mecánicos de Mar del Plata con experiencia y dedicación"
+                className={classes.image}
+                loading="lazy"
+              />
+            </Box>
+
+            <CardContent className={classes.textWrapper}>
+              <Typography variant="h6" gutterBottom>
+                Mecánicos de Corazón, desde Mar del Plata
+              </Typography>
+              <Typography variant="body1" className={classes.content}>
+                Fundada por dos hermanos con una pasión profunda por la mecánica, nuestra empresa combina tradición e
+                innovación en cada servicio. Con años de experiencia en el taller y un compromiso constante con la
+                excelencia, ofrecemos soluciones mecánicas de primer nivel, pensadas para las necesidades actuales.
+                Como marplatenses, aportamos una perspectiva única y cercana, que nos diferencia en el rubro.
+              </Typography>
+              <Typography variant="body1" className={classes.content}>
+                Nuestra misión es brindar soluciones mecánicas confiables y de alta calidad para que puedas seguir
+                adelante con tranquilidad. Combinamos tecnología de punta con un trato al cliente que podés confiar,
+                ya sea para una reparación compleja o un mantenimiento de rutina.
+              </Typography>
+            </CardContent>
+          </Card>
+        </Container>
+      </Box>
+    </>
   );
 }
