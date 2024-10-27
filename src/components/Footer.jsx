@@ -15,7 +15,7 @@ const Footer = () => {
                         <Typography variant="body1" color="inherit" sx={{ transition: 'color 0.3s' }}
                             onMouseEnter={(e) => e.currentTarget.style.color = '#FFFFFF'}
                             onMouseLeave={(e) => e.currentTarget.style.color = '#BDBDBD'}>
-                            © 2024 FMSuspensión. <br/>Echo por MG SOLUCIONES WEB
+                            © 2024 FMSuspensión.
                         </Typography>
                     </Box>
                     <Box>
@@ -61,6 +61,11 @@ const Footer = () => {
                         sx={{ color: '#BDBDBD', transition: 'color 0.3s', '&:hover': { color: '#1DA1F2' } }}>
                         <TwitterIcon />
                     </IconButton>
+                    <br />
+    Echo por{' '}
+    <a href="https://mgproduccionesweb.netlify.app/" target="_blank" rel="noopener noreferrer" style={{ color: '#BDBDBD', textDecoration: 'none' }}>
+        MG SOLUCIONES WEB
+    </a>
                 </Box>
             </Container>
         </footer>
