@@ -1,87 +1,77 @@
-/* styles.css o el archivo CSS correspondiente */
+/* SlideBack.css */
 
 .slide-back {
   width: 100%;
-  height: 100vh; /* Ocupa toda la altura de la pantalla */
-  position: auto;
+  height: 100vh;
+  position: relative;
   overflow: hidden;
 }
-.slide {
-  position: absolute; /* Asegúrate de usar una posición válida */
-  font-size: 16px; /* Ajusta el tamaño de fuente correctamente */
-  /* Agrega otras reglas según sea necesario */
-}
+
 .slide-back__image {
   width: 100%;
-  height: 150%; /* Asegúrate de que cada imagen ocupe todo el contenedor */
-  background-size: cover; /* Asegúrate de cubrir todo el área */
-  background-position: center; /* Centra la imagen */
-  display: flex;
-  align-items: center; /* Centra el contenido verticalmente */
-  justify-content: center; /* Centra el contenido horizontalmente */
-  position: relative;
+  height: 100vh; /* Ocupa toda la altura */
+  background-size: cover;
+  background-position: center;
 }
 
-/* Estilo para el contenido del slide */
 .slide-back__content {
-  color: white; /* Color del texto */
-  text-align: center; /* Centra el texto */
-  font-size: 2rem; /* Tamaño grande para el texto */
-  font-weight: bold; /* Hace que el texto sea más grueso */
+  color: white;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bold;
   position: absolute;
-  top: 60%; /* Centra verticalmente */
-  left: 50%; /* Centra horizontalmente */
-  transform: translate(-50%, -50%); /* Centra perfectamente el texto */
-  z-index: 2; /* Asegúrate de que esté por encima de la imagen de fondo */
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Sombra para mejor contraste */
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
+
 /* Responsivo para pantallas grandes */
 @media (min-width: 1024px) {
   .slide-back__content {
-    font-size: 2.5rem; /* Aumenta el tamaño en pantallas grandes */
+    font-size: 2.5rem;
   }
 }
 
-/* Responsivo para pantallas medianas (tabletas) */
+/* Responsivo para tabletas */
 @media (max-width: 1023px) and (min-width: 768px) {
   .slide-back__content {
-    font-size: 2rem; /* Tamaño de fuente estándar para tabletas */
-    top: 55%; /* Ajuste de posición */
+    font-size: 2rem;
+    top: 55%;
   }
 }
 
-/* Responsivo para pantallas pequeñas (móviles) */
+/* Móviles */
 @media (max-width: 767px) {
   .slide-back__content {
-    font-size: 1.5rem; /* Disminuye el tamaño para móviles */
-    top: 50%; /* Ajuste de posición */
-    padding: 0 10px; /* Añade un poco de espacio lateral para que el texto no se recorte */
+    font-size: 1.5rem;
+    top: 50%;
+    padding: 0 10px;
   }
 }
 
-/* Estilo para el ícono de ubicación */
 .location-icon {
-  color: #E53935; /* Rojo vibrante */
-  font-size: 1.5rem; /* Ajusta el tamaño del ícono */
-  margin-bottom: 10px; /* Añade espacio debajo del ícono */
+  color: #E53935;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
 }
 
-/* Estilo para el botón de contacto */
 .contact-button {
-  background-color: #E53935; /* Color del botón */
-  color: white; /* Color del texto del botón */
-  padding: 15px 30px; /* Aumenta el tamaño del botón */
-  font-size: 1.rem; /* Tamaño de fuente más grande */
+  background-color: #E53935;
+  color: white;
+  padding: 15px 30px;
+  font-size: 1rem;
   text-decoration: none;
   border-radius: 5px;
   transition: background-color 0.3s ease;
-  display: inline-block;
-  margin-top: 20px; /* Espaciado superior para separar el botón del texto */
+  margin-top: 20px;
 }
 
 .contact-button:hover {
-  background-color: #c62828; /* Color más oscuro al pasar el mouse */
+  background-color: #c62828;
 }
+
 .service-button {
   background: none;
   border: none;
@@ -95,5 +85,5 @@
 }
 
 .service-button:hover {
-  color: #c62828; /* Color when hovered */
+  color: #c62828;
 }

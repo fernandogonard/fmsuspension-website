@@ -42,7 +42,6 @@ const SlideBack = () => {
           disableOnInteraction: false,
         }}
         speed={1000}
-        style={{ height: '100vh' }}
       >
         {slidesData.map((slide, index) => (
           <SwiperSlide key={index}>
@@ -50,7 +49,6 @@ const SlideBack = () => {
               className="slide-back__image"
               style={{
                 backgroundImage: `url(${slide.image})`,
-                height: '100vh',
               }}
             ></div>
           </SwiperSlide>
@@ -59,7 +57,6 @@ const SlideBack = () => {
 
       {/* Bloque de texto fijo */}
       <div className="slide-back__content">
-        {/* Ícono de ubicación */}
         <p>
           <FontAwesomeIcon icon={faMapMarkerAlt} className="location-icon" /> 
           Ituzaingó 5848, Mar del Plata

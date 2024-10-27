@@ -1,21 +1,20 @@
 // src/App.jsx
-import React from 'react';
+import React, { Suspense } from 'react';
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 import './App.css';
-import Footer from './components/Footer';
-import WhatsAppButton from './components/WhatsAppButton';
-import MapContainer from './components/MapContainer';
-
-import ServicesComponent from './sections/ServicesComponent';
-import TestimonialsSection from './sections/TestimonialsSection';
-import ContactSection from './sections/ContactSection';
-import PromotionsSection from './sections/PromotionsSection';
-import AboutUs from './components/AboutUs';  // <--- Importa el nuevo componente
-import Navbar from './components/Navbar';
-import SlideBack from './components/SlideBack';
 import './components/SlideBack.css';
 
-// Define la paleta de colores
+const Footer = React.lazy(() => import('./components/Footer'));
+const WhatsAppButton = React.lazy(() => import('./components/WhatsAppButton'));
+const MapContainer = React.lazy(() => import('./components/MapContainer'));
+const ServicesComponent = React.lazy(() => import('./sections/ServicesComponent'));
+const TestimonialsSection = React.lazy(() => import('./sections/TestimonialsSection'));
+const ContactSection = React.lazy(() => import('./sections/ContactSection'));
+const PromotionsSection = React.lazy(() => import('./sections/PromotionsSection'));
+const AboutUs = React.lazy(() => import('./components/AboutUs'));
+const Navbar = React.lazy(() => import('./components/Navbar'));
+const SlideBack = React.lazy(() => import('./components/SlideBack'));
+
 const theme = createTheme({
     palette: {
         primary: {
@@ -39,16 +38,18 @@ function App() {
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline />
-            <Navbar />
-            <SlideBack />
-            <ServicesComponent />
-            <PromotionsSection />
-            <AboutUs /> 
-            <TestimonialsSection />
-            <ContactSection />
-            <MapContainer />
-            <WhatsAppButton />
-            <Footer />
+            <Suspense fallback={<div>Cargando...</div>}>
+                <Navbar />
+                <SlideBack />
+                <ServicesComponent />
+                <PromotionsSection />
+                <AboutUs />
+                <TestimonialsSection />
+                <ContactSection />
+                <MapContainer />
+                <WhatsAppButton />
+                <Footer />
+            </Suspense>
         </ThemeProvider>
     );
 }
