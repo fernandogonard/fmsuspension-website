@@ -9,8 +9,14 @@
     <link rel="manifest" href="manifest.json" />
     <meta name="description" content="Taller de reparación de autos FMSuspensión" />
     <title>FMSuspensión - Taller de Reparación</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" />
-    <link rel="stylesheet" href="App.css" />
+    
+    <!-- Preload de la fuente -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"></noscript>
+
+    <!-- Carga asíncrona del CSS -->
+    <link rel="stylesheet" href="App.css" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="App.css"></noscript>
 
     <style>
         #menu {
@@ -25,6 +31,10 @@
 
         #menu.hidden {
             display: none;
+        }
+
+        #menu.visible {
+            display: block; /* Se mostrará el menú cuando se le añada la clase 'visible' */
         }
     </style>
 </head>
@@ -47,6 +57,8 @@
             document.addEventListener('click', function(event) {
                 if (!menu.contains(event.target)) {
                     menu.classList.add('hidden');
+                } else {
+                    menu.classList.toggle('hidden'); // Toggle para abrir/cerrar
                 }
             });
         });
