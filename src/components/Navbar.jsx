@@ -16,6 +16,26 @@ const Navbar = () => {
     setAnchorEl(null);
   };
 
+  const handleMenuItemClick = (section) => {
+    // Usamos un callback para hacer scroll y cerrar el menú después de navegar
+    const scrollToSection = () => {
+      handleMenuClose();
+    };
+
+    return (
+      <Link
+        to={section.toLowerCase()}
+        smooth
+        duration={500}
+        offset={-70}
+        onClick={scrollToSection} // Se ejecuta al completar el scroll
+        aria-label={`Ir a sección ${section}`}
+      >
+        {section}
+      </Link>
+    );
+  };
+
   return (
     <AppBar position="static" sx={{ backgroundColor: 'black' }}>
       <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -48,15 +68,7 @@ const Navbar = () => {
             >
               {['Inicio', 'Servicios', 'Testimonios', 'Contacto'].map((section, index) => (
                 <MenuItem key={index} onClick={handleMenuClose}>
-                  <Link 
-                    to={section.toLowerCase()} 
-                    smooth 
-                    duration={500} 
-                    offset={-70}
-                    aria-label={`Ir a sección ${section}`}
-                  >
-                    {section}
-                  </Link>
+                  {handleMenuItemClick(section)}
                 </MenuItem>
               ))}
             </Menu>

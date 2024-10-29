@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Typography, Link, Box, Stack, IconButton } from '@mui/material';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
-import TwitterIcon from '@mui/icons-material/Twitter';
+import EmailIcon from '@mui/icons-material/Email';
 
 const Footer = () => {
     return (
@@ -59,18 +59,18 @@ const Footer = () => {
                         <FacebookIcon />
                     </IconButton>
                     <IconButton
-                        href="https://www.twitter.com/tu_usuario"
+                        href="mailto:matiasalbertofemenia@gmail.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label="Twitter"
-                        sx={{ color: '#BDBDBD', transition: 'color 0.3s' }}>
-                        <TwitterIcon />
+                        aria-label="Email"
+                        sx={{ color: '#BDBDBD', transition: 'color 0.3s', '&:hover': { color: '#D44638' } }}>
+                        <EmailIcon />
                     </IconButton>
                 </Box>
 
                 {/* Créditos */}
                 <Typography variant="body2" color="inherit" sx={{ marginTop: '10px' }}>
-                    Echo por{' '}
+                    Hecho por{' '}
                     <Link href="https://mgproduccionesweb.netlify.app/" target="_blank" rel="noopener noreferrer" style={{ color: '#BDBDBD', textDecoration: 'none' }}>
                         MG SOLUCIONES WEB
                     </Link>

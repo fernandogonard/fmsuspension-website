@@ -14,6 +14,12 @@ const promotions = [
         buttonText: "Síguenos en Instagram",
         buttonLink: "#contact", // Cambia el enlace a la página de Instagram o contacto si es necesario
     },
+    { 
+        title: "Descuentos Especiales para Taxis y Remises", 
+        description: "Recibe descuentos exclusivos en todos nuestros servicios al seguirnos en Instagram. ¡Ideal para taxis y remises!", 
+        buttonText: "Síguenos en Instagram",
+        buttonLink: "#contact", // Cambia este enlace a la página de Instagram o contacto si es necesario
+    },
 ];
 
 const PromotionsSection = () => {

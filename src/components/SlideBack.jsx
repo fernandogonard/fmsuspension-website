@@ -50,13 +50,13 @@ const SlideBack = () => {
               style={{
                 backgroundImage: `url(${slide.image})`,
               }}
-              aria-hidden="true" // Este div no es interactivo
+              aria-hidden="true"
             ></div>
           </SwiperSlide>
         ))}
       </Swiper>
 
-      {/* Bloque de texto fijo */}
+      {/* Text Block */}
       <div className="slide-back__content">
         <p>
           <FontAwesomeIcon icon={faMapMarkerAlt} className="location-icon" /> 
@@ -64,19 +64,19 @@ const SlideBack = () => {
         </p>
         <p>Desde hace más de 15 años solucionando las necesidades de tu auto.</p>
 
-        <ul className="services-list">
+        {/* Services Section */}
+        <div className="services-container">
           {['Alineación', 'Balanceo', 'Frenos', 'Mecánica en general'].map((service, index) => (
-            <li key={index}>
-              <button
-                className="service-button"
-                onClick={() => alert(`${service} seleccionada`)}
-                aria-label={`Seleccionar servicio de ${service}`}
-              >
-                <span className="arrow-icon">→</span> {service}
-              </button>
-            </li>
+            <button
+              key={index}
+              className="service-card"
+              onClick={() => alert(`${service} seleccionada`)}
+              aria-label={`Seleccionar servicio de ${service}`}
+            >
+              <span className="arrow-icon">→</span> {service}
+            </button>
           ))}
-        </ul>
+        </div>
 
         <button
           className="contact-button"

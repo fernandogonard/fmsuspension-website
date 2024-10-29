@@ -1,13 +1,9 @@
 import React from 'react';
 import './ServicesComponent.css';
-import { FaCar, FaWrench, FaOilCan, FaBalanceScale, FaCheckCircle } from 'react-icons/fa';
+import {FaWrench, FaOilCan, FaBalanceScale, FaCheckCircle } from 'react-icons/fa';
 
 const services = [
-  {
-    icon: <FaCar aria-hidden="true" />,
-    title: 'Neumáticos',
-    description: 'Encuentra neumáticos de calidad y seguridad para cualquier temporada. Te ayudamos a elegir y colocar los neumáticos ideales.',
-  },
+ 
   {
     icon: <FaWrench aria-hidden="true" />,
     title: 'Tren delantero y trasero',
@@ -15,8 +11,8 @@ const services = [
   },
   {
     icon: <FaBalanceScale aria-hidden="true" />,
-    title: 'Alineación 3D, balanceo y rotación',
-    description: 'Mejora el desgaste de tus neumáticos y la conducción con alineación 3D, balanceo y rotación profesional.',
+    title: 'Alineación, balanceo y rotación',
+    description: 'Mejora el desgaste de tus neumáticos y la conducción con alineación, balanceo y rotación profesional.',
   },
   {
     icon: <FaOilCan aria-hidden="true" />,
@@ -41,7 +37,7 @@ const ServicesComponent = () => {
       <h2 id="services-title" className="services-title">Nuestros Servicios</h2>
       <div className="services-list">
         {services.map((service, index) => (
-          <div key={index} className="service-card" role="article" aria-labelledby={`service-title-${index}`}>
+          <div key={index} className="service-card1" role="article" aria-labelledby={`service-title-${index}`}>
             <div className="service-icon">{service.icon}</div>
             <h3 id={`service-title-${index}`} className="service-title">{service.title}</h3>
             <p className="service-description">{service.description}</p>

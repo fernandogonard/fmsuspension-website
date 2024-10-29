@@ -17,7 +17,7 @@
   justify-content: center; /* Centrar los elementos en el contenedor */
 }
 
-.service-card {
+.service-card1{
   background-color: #fff; /* Fondo blanco para las tarjetas de servicio */
   border-radius: 8px; /* Bordes redondeados */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
