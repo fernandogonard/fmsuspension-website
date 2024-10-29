@@ -1,4 +1,3 @@
-// src/components/AboutUs.jsx
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Box, Typography, Container, Card, CardContent } from '@mui/material';
@@ -31,7 +30,8 @@ const useStyles = makeStyles((theme) => ({
   },
   imageWrapper: {
     flex: '1 1 40%',
-    marginBottom: theme.spacing(2),
+    marginBottom: theme.spacing(0), // Remueve margen adicional
+    padding: 0, // Asegura que no haya espacio extra
     [theme.breakpoints.up('md')]: {
       marginBottom: 0,
     },
@@ -40,6 +40,8 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     height: 'auto',
     borderRadius: theme.shape.borderRadius,
+    border: 'none', // Elimina cualquier borde alrededor de la imagen
+    margin: 0, // Asegura que no haya espacio adicional alrededor
   },
   textWrapper: {
     flex: '1 1 60%',
