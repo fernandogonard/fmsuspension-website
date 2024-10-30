@@ -34,7 +34,7 @@
         }
 
         #menu.visible {
-            display: block; /* Se mostrará el menú cuando se le añada la clase 'visible' */
+            display: block;
         }
     </style>
 </head>
@@ -53,12 +53,11 @@
         document.addEventListener('DOMContentLoaded', function() {
             const menu = document.getElementById('menu');
 
-            // Abrir y cerrar el menú
             document.addEventListener('click', function(event) {
                 if (!menu.contains(event.target)) {
                     menu.classList.add('hidden');
                 } else {
-                    menu.classList.toggle('hidden'); // Toggle para abrir/cerrar
+                    menu.classList.toggle('hidden');
                 }
             });
         });
