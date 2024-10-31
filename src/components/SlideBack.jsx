@@ -10,24 +10,24 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 
-import image1 from '../assets/20241015_081502.jpg';
-import image2 from '../assets/20241014_182757.jpg';
-import image3 from '../assets/20241011_112651.jpg';
-import image4 from '../assets/20241015_135538.jpg';
-import image5 from '../assets/20241015_135603.jpg';
-import image6 from '../assets/20241015_162231.jpg';
-import image7 from '../assets/20241016_145129.jpg';
-import image8 from '../assets/20241023_081246.jpg';
+import image1 from '../assets/alineacion-auto-ford-focus.jpg'; // Alineación de auto Ford Focus
+import image2 from '../assets/balanceo-auto-toyota-corolla.jpg'; // Balanceo de auto Toyota Corolla
+import image3 from '../assets/mecanica-general-chevrolet-s10.jpg'; // Mecánica general para Chevrolet S10
+import image4 from '../assets/reparacion-frenos-volkswagen-golf.jpg'; // Reparación de frenos para Volkswagen Golf
+import image5 from '../assets/suspension-auto-renault-duster.jpg'; // Suspensión de auto Renault Duster
+import image6 from '../assets/mantenimiento-auto-peugeot-208.jpg'; // Mantenimiento integral para Peugeot 208
+import image7 from '../assets/diagnostico-auto-honda-civic.jpg'; // Diagnóstico automotriz para Honda Civic
+import image8 from '../assets/reparacion-neumaticos-nissan-versa.jpg'; // Reparación de neumáticos para Nissan Versa
 
 const slidesData = [
-  { image: image1 },
-  { image: image2 },
-  { image: image3 },
-  { image: image4 },
-  { image: image5 },
-  { image: image6 },
-  { image: image7 },
-  { image: image8 },
+  { image: image1, alt: 'Alineación de auto Ford Focus en FMSuspensión, Mar del Plata - Reparación de tren delantero y alineación precisa.' },
+  { image: image2, alt: 'Balanceo de auto Toyota Corolla en FMSuspensión - Servicio especializado en balanceo de neumáticos.' },
+  { image: image3, alt: 'Mecánica general para Chevrolet S10 en FMSuspensión - Soluciones confiables para tu vehículo.' },
+  { image: image4, alt: 'Reparación de frenos para Volkswagen Golf en FMSuspensión - Servicio de frenos seguro y eficiente.' },
+  { image: image5, alt: 'Suspensión de auto Renault Duster en FMSuspensión - Especialistas en suspensión y tren delantero.' },
+  { image: image6, alt: 'Mantenimiento integral para Peugeot 208 en FMSuspensión - Servicio mecánico completo para tu auto.' },
+  { image: image7, alt: 'Diagnóstico automotriz para Honda Civic en FMSuspensión - Soluciones rápidas y efectivas.' },
+  { image: image8, alt: 'Reparación de neumáticos para Nissan Versa en FMSuspensión - Servicios de alineación y balanceo de alta calidad.' },
 ];
 
 // Información de contacto de WhatsApp
@@ -57,16 +57,16 @@ const SlideBack = () => {
       >
         {slidesData.map((slide, index) => (
           <SwiperSlide key={index}>
-            <div
+            <img
+              src={slide.image}
+              alt={slide.alt}
               className="slide-back__image"
-              style={{
-                backgroundImage: `url(${slide.image})`,
-              }}
-              aria-hidden="true"
-              role="img"
               loading="lazy"
-              // El alt debe estar en un elemento de texto, no en un div
-            ></div>
+              style={{
+                width: '100%', // Asegúrate de que la imagen ocupe el 100% del ancho del contenedor
+                height: 'auto', // Mantiene la proporción de la imagen
+              }}
+            />
           </SwiperSlide>
         ))}
       </Swiper>
