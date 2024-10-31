@@ -9,10 +9,6 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#f4f4f4',
     color: 'black',
   },
-  header: {
-    marginBottom: theme.spacing(3),
-    textAlign: 'center',
-  },
   card: {
     display: 'flex',
     flexDirection: 'column',
@@ -30,8 +26,8 @@ const useStyles = makeStyles((theme) => ({
   },
   imageWrapper: {
     flex: '1 1 40%',
-    marginBottom: theme.spacing(0), // Remueve margen adicional
-    padding: 0, // Asegura que no haya espacio extra
+    marginBottom: theme.spacing(0),
+    padding: 0,
     [theme.breakpoints.up('md')]: {
       marginBottom: 0,
     },
@@ -40,8 +36,8 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     height: 'auto',
     borderRadius: theme.shape.borderRadius,
-    border: 'none', // Elimina cualquier borde alrededor de la imagen
-    margin: 0, // Asegura que no haya espacio adicional alrededor
+    border: 'none',
+    margin: 0,
   },
   textWrapper: {
     flex: '1 1 60%',
@@ -67,11 +63,10 @@ export default function AboutUs() {
         <meta name="robots" content="index,follow" />
       </Helmet>
 
-      <Box className={classes.root} component="section" aria-labelledby="about-us-title">
+      <Box className={classes.root} component="section">
         <Container maxWidth="md">
-          <Typography variant="h4" className={classes.header} id="about-us-title">
-            Sobre Nosotros
-          </Typography>
+          {/* Elimina el título duplicado aquí */}
+          {/* <Typography variant="h4" className={classes.header}>Sobre Nosotros</Typography> */}
 
           <Card className={classes.card} component="article">
             <Box className={classes.imageWrapper}>

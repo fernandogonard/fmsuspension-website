@@ -1,9 +1,9 @@
+// ServicesComponent.jsx
 import React from 'react';
 import './ServicesComponent.css';
-import {FaWrench, FaOilCan, FaBalanceScale, FaCheckCircle } from 'react-icons/fa';
+import { FaWrench, FaOilCan, FaBalanceScale, FaCheckCircle } from 'react-icons/fa';
 
 const services = [
- 
   {
     icon: <FaWrench aria-hidden="true" />,
     title: 'Tren delantero y trasero',
@@ -33,11 +33,10 @@ const services = [
 
 const ServicesComponent = () => {
   return (
-    <div className="services-container" role="region" aria-labelledby="services-title">
-      <h2 id="services-title" className="services-title">Nuestros Servicios</h2>
+    <div className="services-container" aria-labelledby="services-title">
       <div className="services-list">
         {services.map((service, index) => (
-          <div key={index} className="service-card1" role="article" aria-labelledby={`service-title-${index}`}>
+          <div key={index} className="service-card1" aria-labelledby={`service-title-${index}`}>
             <div className="service-icon">{service.icon}</div>
             <h3 id={`service-title-${index}`} className="service-title">{service.title}</h3>
             <p className="service-description">{service.description}</p>

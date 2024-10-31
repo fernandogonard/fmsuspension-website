@@ -1,11 +1,11 @@
 import React from 'react';
-import { Container, Typography, Paper, Avatar, Box } from '@mui/material';
+import { Container, Paper, Avatar, Box, Typography } from '@mui/material';
 import Carousel from 'react-material-ui-carousel';
-import PersonIcon from '@mui/icons-material/Person'; // Ícono para el avatar si no hay imagen
+import PersonIcon from '@mui/icons-material/Person';
 
 const testimonials = [
     { name: "Juan Pérez", feedback: "Excelente servicio, mi auto quedó como nuevo.", image: null },
-    { name: "María López", feedback: "Muy profesionales, los recomiendo al 100%.", image: null },
+    { name: "María López", feedback: "Muy profesionales, los recomiendo al 100 %;.", image: null }, // Reemplazando el 100%
     { name: "Carlos García", feedback: "Trabajo impecable y atención rápida.", image: null },
     { name: "Lucía Rodríguez", feedback: "Un lugar de confianza para cualquier reparación.", image: null },
 ];
@@ -16,14 +16,6 @@ const TestimonialsSection = () => {
             id="testimonials" 
             sx={{ padding: '50px 0', backgroundColor: '#000000', color: '#FFFFFF' }}
         >
-            <Typography 
-                variant="h4" 
-                gutterBottom 
-                color="secondary" 
-                align="center"
-            >
-                Testimonios de Clientes
-            </Typography>
             <Carousel
                 indicators={false}
                 navButtonsAlwaysVisible={true}
@@ -59,7 +51,7 @@ const TestimonialsSection = () => {
                                 variant="body1" 
                                 sx={{ fontStyle: 'italic', marginBottom: '10px' }}
                             >
-                                "{testimonial.feedback}"
+                                &quot;{testimonial.feedback}&quot; {/* Comillas escapadas */}
                             </Typography>
                             <Typography 
                                 variant="subtitle2" 

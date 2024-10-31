@@ -25,10 +25,7 @@ const promotions = [
 
 const PromotionsSection = () => {
     return (
-        <Container id="promotions" sx={{ padding: '50px 0', backgroundColor: '#424242', textAlign: 'center' }}>
-            <Typography variant="h4" gutterBottom color="secondary" component="h2" aria-labelledby="promotions-title">
-                Ofertas Especiales
-            </Typography>
+        <Container sx={{ padding: '50px 0', backgroundColor: '#424242', textAlign: 'center' }}>
             <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }} role="region" aria-labelledby="promotions">
                 {promotions.map((promo, index) => (
                     <Paper

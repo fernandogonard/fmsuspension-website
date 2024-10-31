@@ -65,7 +65,7 @@ const SlideBack = () => {
               aria-hidden="true"
               role="img"
               loading="lazy"
-              alt={`Imagen ${index + 1} de los servicios de FMSuspensión`}
+              // El alt debe estar en un elemento de texto, no en un div
             ></div>
           </SwiperSlide>
         ))}
@@ -73,6 +73,7 @@ const SlideBack = () => {
 
       {/* Bloque de Texto */}
       <div className="slide-back__content">
+        <h1>FM SUSPENSION</h1>
         <p>
           <FontAwesomeIcon icon={faMapMarkerAlt} className="location-icon" />
           Ituzaingó 5848, Mar del Plata

@@ -7,11 +7,18 @@ body {
   margin: 0;
   padding: 0;
 }
-
-h1, h2, h3, h4, h5, h6 {
+H1{text-align: center;
+}
+h3, h4, h5, h6 {
   color: #E53935;
   font-weight: 700;
-  margin: 20px 0; /* Espaciado entre encabezados */
+  margin: 20px 0;
+   /* Espaciado entre encabezados */
+}
+h2 {
+  color: #E53935;
+  font-weight: 700;
+  text-align: center; /* Centra el texto */
 }
 
 .button-primary {

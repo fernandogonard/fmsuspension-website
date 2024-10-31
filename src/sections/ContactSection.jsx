@@ -1,6 +1,5 @@
-// src/sections/ContactSection.js
 import React, { useState } from 'react';
-import { Container, Typography, TextField, Button } from '@mui/material';
+import { Container, TextField, Button } from '@mui/material';
 
 const ContactSection = () => {
     const [formData, setFormData] = useState({
@@ -25,9 +24,6 @@ const ContactSection = () => {
     return (
         <section id="contact" style={{ padding: '50px 0', backgroundColor: '#424242' }}>
             <Container>
-                <Typography variant="h4" gutterBottom color="secondary" component="h2" aria-labelledby="contact-title">
-                    Contáctanos
-                </Typography>
                 <form onSubmit={handleSubmit} aria-labelledby="contact-form">
                     {['Nombre', 'Email', 'Mensaje'].map((label, index) => (
                         <TextField
