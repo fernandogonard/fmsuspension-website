@@ -64,7 +64,7 @@ const SlideBack = () => {
               loading="lazy"
               style={{
                 width: '100%', // Asegúrate de que la imagen ocupe el 100% del ancho del contenedor
-                height: 'auto', // Mantiene la proporción de la imagen
+                height: '100%', // Mantiene la proporción de la imagen
               }}
             />
           </SwiperSlide>
@@ -86,22 +86,25 @@ const SlideBack = () => {
             <button
               key={index}
               className="service-card"
-              onClick={() => alert(`${service} seleccionada`)}
-              aria-label={`Seleccionar servicio de ${service}`}
+              aria-label={`Solicitar servicio de ${service}`}
+              onClick={() => alert(`Solicitud de servicio: ${service}`)}
             >
-              <span className="arrow-icon">→</span> {service}
+              <FontAwesomeIcon icon={['fas', 'cogs']} className="arrow-icon" />
+              {service}
             </button>
           ))}
         </section>
 
-        {/* Botón de Contacto por WhatsApp */}
-        <button
+        {/* Botón de Contacto */}
+        <a
+          href={`https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(whatsappMessage)}`}
+          target="_blank"
+          rel="noopener noreferrer"
           className="contact-button"
-          onClick={() => window.open(`https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(whatsappMessage)}`, '_blank')}
-          aria-label="Enviar un mensaje a FMSuspensión en WhatsApp"
+          aria-label="Contáctanos por WhatsApp"
         >
-          Contáctanos en WhatsApp
-        </button>
+          Contáctanos
+        </a>
       </div>
     </div>
   );

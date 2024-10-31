@@ -82,9 +82,4 @@ h2 {
   text-decoration: underline; /* Subrayado en el hover */
 }
 
-/* Secciones con fondo */
-.section {
-  padding: 40px 20px; /* Espaciado de las secciones */
-  background-color: rgba(255, 255, 255, 0.05); /* Fondo sutil */
-  margin: 20px 0; /* Espaciado entre secciones */
-}
+
