@@ -51,7 +51,7 @@ export default function AboutUs() {
   return (
     <>
       <Helmet>
-        <title>Sobre Nosotros | Mecánicos de Corazón en Mar del Plata</title>
+        <title>FMSuspensión - Servicios de Suspensión y Alineación</title>
         <meta
           name="description"
           content="Mecánicos de Corazón, una empresa marplatense fundada por hermanos apasionados por la mecánica, ofrece servicios mecánicos de alta calidad y tecnología de punta."
@@ -65,9 +65,6 @@ export default function AboutUs() {
 
       <Box className={classes.root} component="section">
         <Container maxWidth="md">
-          {/* Elimina el título duplicado aquí */}
-          {/* <Typography variant="h4" className={classes.header}>Sobre Nosotros</Typography> */}
-
           <Card className={classes.card} component="article">
             <Box className={classes.imageWrapper}>
               <img
