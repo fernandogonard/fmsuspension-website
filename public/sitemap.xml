@@ -5,49 +5,49 @@
         http://www.sitemaps.org/schemas/sitemap-image/1.1/sitemap-image.xsd">
 
     <url>
-        <loc>https://www.fmsuspension.com/</loc>
+        <loc>https://fmsuspension.netlify.app/</loc>
         <lastmod>2024-10-30</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
 
     <url>
-        <loc>https://www.fmsuspension.com/servicios</loc>
+        <loc>https://fmsuspension.netlify.app/servicios</loc>
         <lastmod>2024-10-30</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://www.fmsuspension.com/promociones</loc>
+        <loc>https://fmsuspension.netlify.app/promociones</loc>
         <lastmod>2024-10-30</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
-        <loc>https://www.fmsuspension.com/sobre-nosotros</loc>
+        <loc>https://fmsuspension.netlify.app/sobre-nosotros</loc>
         <lastmod>2024-10-30</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.6</priority>
     </url>
 
     <url>
-        <loc>https://www.fmsuspension.com/testimonios</loc>
+        <loc>https://fmsuspension.netlify.app/testimonios</loc>
         <lastmod>2024-10-30</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
 
     <url>
-        <loc>https://www.fmsuspension.com/contacto</loc>
+        <loc>https://fmsuspension.netlify.app/contacto</loc>
         <lastmod>2024-10-30</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://www.fmsuspension.com/ubicacion</loc>
+        <loc>https://fmsuspension.netlify.app/ubicacion</loc>
         <lastmod>2024-10-30</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.4</priority>
