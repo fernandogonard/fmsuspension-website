@@ -3,7 +3,7 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper/modules';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import { faMapMarkerAlt, faCogs } from '@fortawesome/free-solid-svg-icons'; // Importando directamente faCogs
 import { Helmet } from 'react-helmet-async'; // Para añadir meta datos específicos
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -89,7 +89,7 @@ const SlideBack = () => {
               aria-label={`Solicitar servicio de ${service}`}
               onClick={() => alert(`Solicitud de servicio: ${service}`)}
             >
-              <FontAwesomeIcon icon={['fas', 'cogs']} className="arrow-icon" />
+              <FontAwesomeIcon icon={faCogs} className="arrow-icon" /> {/* Uso correcto del icono importado */}
               {service}
             </button>
           ))}

@@ -1,0 +1,36 @@
+/* Dispositivos grandes (desktops y laptops) */
+@media (min-width: 1024px) {
+    body {
+        font-size: 18px;
+    }
+}
+
+/* Tablets (verticales y horizontales) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    body {
+        font-size: 16px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+}
+
+/* Dispositivos pequeños (smartphones) */
+@media (max-width: 767px) {
+    body {
+        font-size: 14px;
+    }
+
+    /* Ajuste de menús y contenedores */
+    #menu {
+        width: 100%;
+        position: static;
+        border: none;
+        box-shadow: none;
+    }
+
+    .grid {
+        grid-template-columns: 1fr; /* Una sola columna en pantallas pequeñas */
+    }
+}
