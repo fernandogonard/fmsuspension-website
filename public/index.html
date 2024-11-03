@@ -5,23 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="google-site-verification" content="yLSJM5YOqlpnhZf421jvi9aV5UjN4P_49xnn8vfh7-w"/>
     <link rel="icon" href="/favicon.ico"/>
-    <link rel="apple-touch-icon" href="/logo.png"/>
+    <link rel="apple-touch-icon" href="./assets/logo.png"/>
     <link rel="manifest" href="/manifest.json"/>
     <link rel="canonical" href="https://fmsuspension.netlify.app/"/>
     <meta name="description" content="FM Suspensión ofrece servicios de alineación, balanceo, frenos y tren delantero en Mar del Plata. Más de 15 años de experiencia en reparación de autos.">
     <title>FM Suspensión - Mecánica, Alineación, Frenos en Mar del Plata</title>
     
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" as="style" onload='this.onload=null,this.rel="stylesheet"'>
+    <!-- Precarga de fuentes y estilos -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
     </noscript>
-    
-    <link rel="stylesheet" href="./App.css" media="print" onload='this.media="all"'/>
+
+    <link rel="stylesheet" href="./App.css" media="print" onload="this.media='all'"/>
     <noscript>
         <link rel="stylesheet" href="./App.css">
     </noscript>
     
     <style>
+        /* Estilos en línea para evitar destellos sin estilo (FOUC) */
         #menu {
             display: none;
             background-color: #fff;
@@ -30,13 +32,14 @@
             right: 10px;
             border: 1px solid #ccc;
             z-index: 1000;
+            transition: opacity 0.2s ease;
         }
         #menu.hidden { display: none; }
         #menu.visible { display: block; }
     </style>
 
-    <!-- Ajuste en la ruta del script -->
-    <script defer="defer" src="./static/js/main.046d95ac.js"></script>
+    <!-- Carga del script principal de la aplicación -->
+    <script defer src="./static/js/main.046d95ac.js"></script>
     <link href="./static/css/main.7af83146.css" rel="stylesheet">
 </head>
 <body>
@@ -56,8 +59,13 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const menu = document.getElementById("menu");
+            
+            // Mostrar u ocultar el menú
             document.addEventListener("click", function(event) {
-                if (menu.contains(event.target)) {
+                // Comprobar si el clic fue dentro del menú o en un enlace dentro de él
+                if (menu.contains(event.target) && event.target.tagName === "A") {
+                    menu.classList.add("hidden"); // Ocultar menú al seleccionar una opción
+                } else if (menu.contains(event.target)) {
                     menu.classList.toggle("hidden");
                 } else {
                     menu.classList.add("hidden");

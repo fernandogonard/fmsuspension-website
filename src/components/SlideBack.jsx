@@ -10,14 +10,14 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 
-import image1 from '../assets/alineacion-auto-ford-focus.jpg'; // Alineación de auto Ford Focus
-import image2 from '../assets/balanceo-auto-toyota-corolla.jpg'; // Balanceo de auto Toyota Corolla
-import image3 from '../assets/mecanica-general-chevrolet-s10.jpg'; // Mecánica general para Chevrolet S10
-import image4 from '../assets/reparacion-frenos-volkswagen-golf.jpg'; // Reparación de frenos para Volkswagen Golf
-import image5 from '../assets/suspension-auto-renault-duster.jpg'; // Suspensión de auto Renault Duster
-import image6 from '../assets/mantenimiento-auto-peugeot-208.jpg'; // Mantenimiento integral para Peugeot 208
-import image7 from '../assets/diagnostico-auto-honda-civic.jpg'; // Diagnóstico automotriz para Honda Civic
-import image8 from '../assets/reparacion-neumaticos-nissan-versa.jpg'; // Reparación de neumáticos para Nissan Versa
+import image1 from '../assets/alineacion-auto-ford-focus.webp'; // Alineación de auto Ford Focus
+import image2 from '../assets/balanceo-auto-toyota-corolla.webp'; // Balanceo de auto Toyota Corolla
+import image3 from '../assets/mecanica-general-chevrolet-s10.webp'; // Mecánica general para Chevrolet S10
+import image4 from '../assets/reparacion-frenos-volkswagen-golf.webp'; // Reparación de frenos para Volkswagen Golf
+import image5 from '../assets/suspension-auto-renault-duster.webp'; // Suspensión de auto Renault Duster
+import image6 from '../assets/mantenimiento-auto-peugeot-208.webp'; // Mantenimiento integral para Peugeot 208
+import image7 from '../assets/diagnostico-auto-honda-civic.webp'; // Diagnóstico automotriz para Honda Civic
+import image8 from '../assets/reparacion-neumaticos-nissan-versa.webp'; // Reparación de neumáticos para Nissan Versa
 
 const slidesData = [
   { image: image1, alt: 'Alineación de auto Ford Focus en FMSuspensión, Mar del Plata - Reparación de tren delantero y alineación precisa.' },
@@ -40,7 +40,7 @@ const SlideBack = () => {
       <Helmet>
         <title>Servicios de FMSuspensión - Mar del Plata</title>
         <meta name="description" content="Servicios de alineación, balanceo y mecánica en Mar del Plata, ubicados en Ituzaingó 5848. Experiencia y confianza en el cuidado de tu auto." />
-        <link rel="canonical" href="https://fmsuspension.com/servicios" />
+        <link href="https://fmsuspension.com/servicios" />
       </Helmet>
 
       <Swiper
