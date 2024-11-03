@@ -8,7 +8,7 @@
 
 /* Background image covers the viewport */
 .slide-back__image {
-  width: 50%;
+  width: 100%;
   height: 50vh;
   object-fit: cover; /* Cambié a object-fit para mejorar el recorte de la imagen */
 }

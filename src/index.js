@@ -11,10 +11,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <HelmetProvider>
-      <App />
+      <React.Suspense fallback={<div>Loading...</div>}>
+        <App />
+      </React.Suspense>
     </HelmetProvider>
   </React.StrictMode>
 );
-
 // Medir rendimiento de la aplicación
 reportWebVitals();

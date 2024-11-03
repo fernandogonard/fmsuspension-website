@@ -3,21 +3,21 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper/modules';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMapMarkerAlt, faCogs } from '@fortawesome/free-solid-svg-icons'; // Importando directamente faCogs
-import { Helmet } from 'react-helmet-async'; // Para añadir meta datos específicos
+import { faMapMarkerAlt, faCogs } from '@fortawesome/free-solid-svg-icons'; 
+import { Helmet } from 'react-helmet-async'; 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 
-import image1 from '../assets/alineacion-auto-ford-focus.webp'; // Alineación de auto Ford Focus
-import image2 from '../assets/balanceo-auto-toyota-corolla.webp'; // Balanceo de auto Toyota Corolla
-import image3 from '../assets/mecanica-general-chevrolet-s10.webp'; // Mecánica general para Chevrolet S10
-import image4 from '../assets/reparacion-frenos-volkswagen-golf.webp'; // Reparación de frenos para Volkswagen Golf
-import image5 from '../assets/suspension-auto-renault-duster.webp'; // Suspensión de auto Renault Duster
-import image6 from '../assets/mantenimiento-auto-peugeot-208.webp'; // Mantenimiento integral para Peugeot 208
-import image7 from '../assets/diagnostico-auto-honda-civic.webp'; // Diagnóstico automotriz para Honda Civic
-import image8 from '../assets/reparacion-neumaticos-nissan-versa.webp'; // Reparación de neumáticos para Nissan Versa
+import image1 from '../assets/alineacion-auto-ford-focus.webp'; 
+import image2 from '../assets/balanceo-auto-toyota-corolla.webp'; 
+import image3 from '../assets/mecanica-general-chevrolet-s10.webp'; 
+import image4 from '../assets/reparacion-frenos-volkswagen-golf.webp'; 
+import image5 from '../assets/suspension-auto-renault-duster.webp'; 
+import image6 from '../assets/mantenimiento-auto-peugeot-208.webp'; 
+import image7 from '../assets/diagnostico-auto-honda-civic.webp'; 
+import image8 from '../assets/reparacion-neumaticos-nissan-versa.webp'; 
 
 const slidesData = [
   { image: image1, alt: 'Alineación de auto Ford Focus en FMSuspensión, Mar del Plata - Reparación de tren delantero y alineación precisa.' },
@@ -30,17 +30,22 @@ const slidesData = [
   { image: image8, alt: 'Reparación de neumáticos para Nissan Versa en FMSuspensión - Servicios de alineación y balanceo de alta calidad.' },
 ];
 
-// Información de contacto de WhatsApp
-const phoneNumber = "+5492236003351"; // Estandarizado sin espacios ni guiones
+const phoneNumber = "+5492236003351"; 
 const whatsappMessage = "Hola, estoy interesado en los servicios de FMSuspensión.";
 
 const SlideBack = () => {
+  const handleServiceRequest = (service) => {
+    // Implementar lógica para manejar la solicitud de servicio
+    // Por ejemplo, mostrar un mensaje en la interfaz
+    alert(`Solicitud de servicio: ${service}`);
+  };
+
   return (
     <div className="slide-back" role="region" aria-label="Presentación de servicios">
       <Helmet>
         <title>Servicios de FMSuspensión - Mar del Plata</title>
         <meta name="description" content="Servicios de alineación, balanceo y mecánica en Mar del Plata, ubicados en Ituzaingó 5848. Experiencia y confianza en el cuidado de tu auto." />
-        <link href="https://fmsuspension.com/servicios" />
+        <link href="https://fmsuspension.com/servicios" rel="canonical" />
       </Helmet>
 
       <Swiper
@@ -62,16 +67,11 @@ const SlideBack = () => {
               alt={slide.alt}
               className="slide-back__image"
               loading="lazy"
-              style={{
-                width: '100%', // Asegúrate de que la imagen ocupe el 100% del ancho del contenedor
-                height: '100%', // Mantiene la proporción de la imagen
-              }}
             />
           </SwiperSlide>
         ))}
       </Swiper>
 
-      {/* Bloque de Texto */}
       <div className="slide-back__content">
         <h1>FM SUSPENSION</h1>
         <p>
@@ -80,22 +80,21 @@ const SlideBack = () => {
         </p>
         <p>Desde hace más de 15 años solucionando las necesidades de tu auto.</p>
 
-        {/* Servicios Destacados */}
         <section className="services-container" aria-label="Servicios ofrecidos">
           {['Alineación', 'Balanceo', 'Frenos', 'Mecánica en general'].map((service, index) => (
             <button
               key={index}
               className="service-card"
               aria-label={`Solicitar servicio de ${service}`}
-              onClick={() => alert(`Solicitud de servicio: ${service}`)}
+              onClick={() => handleServiceRequest(service)}
+              tabIndex={0} // Mejora la accesibilidad
             >
-              <FontAwesomeIcon icon={faCogs} className="arrow-icon" /> {/* Uso correcto del icono importado */}
+              <FontAwesomeIcon icon={faCogs} className="arrow-icon" />
               {service}
             </button>
           ))}
         </section>
 
-        {/* Botón de Contacto */}
         <a
           href={`https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(whatsappMessage)}`}
           target="_blank"
