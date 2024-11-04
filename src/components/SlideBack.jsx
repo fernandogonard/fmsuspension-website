@@ -45,7 +45,7 @@ const SlideBack = () => {
       <Helmet>
         <title>Servicios de FMSuspensión - Mar del Plata</title>
         <meta name="description" content="Servicios de alineación, balanceo y mecánica en Mar del Plata, ubicados en Ituzaingó 5848. Experiencia y confianza en el cuidado de tu auto." />
-        <link href="https://fmsuspension.com/servicios" rel="canonical" />
+        <link href="https://fmsuspension.netlify.app/" rel="canonical" />
       </Helmet>
 
       <Swiper
