@@ -25,25 +25,59 @@ const ContactSection = () => {
         <section id="contact" style={{ padding: '50px 0', backgroundColor: '#424242' }}>
             <Container>
                 <form onSubmit={handleSubmit} aria-labelledby="contact-form">
-                    {['Nombre', 'Email', 'Mensaje'].map((label, index) => (
-                        <TextField
-                            key={index}
-                            label={label}
-                            name={label.toLowerCase()}
-                            variant="outlined"
-                            fullWidth
-                            required
-                            margin="normal"
-                            color="secondary"
-                            value={formData[label.toLowerCase()]}
-                            onChange={handleChange}
-                            sx={{
-                                transition: 'border-color 0.3s',
-                                '&:hover': { borderColor: '#E53935' }
-                            }}
-                            inputProps={{ 'aria-label': label }} // Atributo aria para accesibilidad
-                        />
-                    ))}
+                    <TextField
+                        label="Nombre"
+                        name="nombre"
+                        variant="outlined"
+                        fullWidth
+                        required
+                        margin="normal"
+                        color="secondary"
+                        value={formData.nombre}
+                        onChange={handleChange}
+                        autoComplete="name" // Agregado atributo autocomplete para nombre
+                        inputProps={{ 'aria-label': 'Nombre' }}
+                        sx={{
+                            transition: 'border-color 0.3s',
+                            '&:hover': { borderColor: '#E53935' }
+                        }}
+                    />
+                    <TextField
+                        label="Email"
+                        name="email"
+                        variant="outlined"
+                        fullWidth
+                        required
+                        margin="normal"
+                        color="secondary"
+                        value={formData.email}
+                        onChange={handleChange}
+                        autoComplete="email" // Agregado atributo autocomplete para email
+                        inputProps={{ 'aria-label': 'Email' }}
+                        sx={{
+                            transition: 'border-color 0.3s',
+                            '&:hover': { borderColor: '#E53935' }
+                        }}
+                    />
+                    <TextField
+                        label="Mensaje"
+                        name="mensaje"
+                        variant="outlined"
+                        fullWidth
+                        required
+                        margin="normal"
+                        color="secondary"
+                        value={formData.mensaje}
+                        onChange={handleChange}
+                        autoComplete="off" // Agregado para que no autocomplete el mensaje
+                        inputProps={{ 'aria-label': 'Mensaje' }}
+                        multiline
+                        minRows={4}
+                        sx={{
+                            transition: 'border-color 0.3s',
+                            '&:hover': { borderColor: '#E53935' }
+                        }}
+                    />
                     <Button 
                         variant="contained" 
                         color="primary" 
