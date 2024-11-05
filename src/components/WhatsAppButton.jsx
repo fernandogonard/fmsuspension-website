@@ -1,8 +1,9 @@
 // src/components/WhatsAppButton.js
 import React from 'react';
-import whatsappIcon from '../assets/whatsapp-icon.png'; // Asegúrate de que esta es la ruta correcta
+
 import { Helmet } from 'react-helmet-async'; // Para añadir meta datos específicos
 import './WhatsAppButton.css';
+import whatsappIcon from '../assets/whatsapp-icon.png'; // Ajusta la ruta según la ubicación
 
 const WhatsAppButton = () => {
     const phoneNumber = "+5492236003351"; // Estandarizado sin espacios ni guiones

@@ -35,8 +35,6 @@ const whatsappMessage = "Hola, estoy interesado en los servicios de FMSuspensió
 
 const SlideBack = () => {
   const handleServiceRequest = (service) => {
-    // Implementar lógica para manejar la solicitud de servicio
-    // Por ejemplo, mostrar un mensaje en la interfaz
     alert(`Solicitud de servicio: ${service}`);
   };
 
@@ -49,17 +47,19 @@ const SlideBack = () => {
       </Helmet>
 
       <Swiper
-        modules={[Navigation, Pagination, EffectFade, Autoplay]}
-        spaceBetween={30}
-        effect="fade"
-        pagination={{ clickable: true }}
-        navigation
-        autoplay={{
-          delay: 4000,
-          disableOnInteraction: false,
-        }}
-        speed={1000}
-      >
+  modules={[Navigation, Pagination, EffectFade, Autoplay]}
+  spaceBetween={30}
+  effect="fade"
+  pagination={{ clickable: true }}
+  navigation
+  autoplay={{
+    delay: 4000,
+    disableOnInteraction: false,
+  }}
+  speed={1000}
+  slidesPerView={1} // Ajusta este valor según tus necesidades
+>
+
         {slidesData.map((slide, index) => (
           <SwiperSlide key={index}>
             <img
@@ -87,7 +87,7 @@ const SlideBack = () => {
               className="service-card"
               aria-label={`Solicitar servicio de ${service}`}
               onClick={() => handleServiceRequest(service)}
-              tabIndex={0} // Mejora la accesibilidad
+              tabIndex={0}
             >
               <FontAwesomeIcon icon={faCogs} className="arrow-icon" />
               {service}

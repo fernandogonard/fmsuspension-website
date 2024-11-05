@@ -37,11 +37,17 @@ function App() {
             
             {/* Helmet para optimización SEO */}
             <Helmet>
-                <title>Mecánica de Confianza en Mar del Plata - FMSuspensión</title>
-                <meta name="description" content="Expertos en reparación automotriz en Mar del Plata. Ofrecemos servicios de alta calidad con tecnología avanzada y personal comprometido con el cliente." />
-                <meta name="keywords" content="mecánica, reparación de autos, Mar del Plata, mantenimiento de vehículos, taller automotriz" />
-                <meta name="robots" content="index,follow" />
-            </Helmet>
+    <title>Mecánica de Confianza en Mar del Plata - FMSuspensión</title>
+    <meta name="description" content="Expertos en reparación automotriz en Mar del Plata. Ofrecemos servicios de alta calidad con tecnología avanzada y personal comprometido con el cliente." />
+    <meta name="keywords" content="mecánica, reparación de autos, Mar del Plata, mantenimiento de vehículos, taller automotriz" />
+    <meta name="robots" content="index,follow" />
+    {/* Metaetiquetas de Open Graph */}
+    <meta property="og:title" content="Mecánica de Confianza en Mar del Plata - FMSuspensión" />
+    <meta property="og:description" content="Expertos en reparación automotriz en Mar del Plata. Ofrecemos servicios de alta calidad con tecnología avanzada y personal comprometido con el cliente." />
+    <meta property="og:image" content="URL_DE_LA_IMAGEN_COMPARTIBLE" /> {/* Reemplaza con la URL de una imagen representativa */}
+    <meta property="og:url" content="URL_DE_TU_SITIO_WEB" /> {/* Reemplaza con la URL del sitio web */}
+    <meta property="og:type" content="website" />
+</Helmet>
 
             <Suspense fallback={<div style={{ textAlign: 'center', padding: '50px' }}><CircularProgress color="primary" /><p>Cargando contenido, por favor espera...</p></div>}>
                 <header>

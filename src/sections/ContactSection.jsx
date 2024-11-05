@@ -16,8 +16,17 @@ const ContactSection = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const { nombre, email, mensaje } = formData;
+
+        // Validación de campos
+        if (!nombre || !email || !mensaje) {
+            alert('Por favor, completa todos los campos.');
+            return;
+        }
+
         const mensajeWhatsapp = `Hola, soy ${nombre}. Mi correo es: ${email}. Mensaje: ${mensaje}`;
         const whatsappUrl = `https://api.whatsapp.com/send?phone=+5492236003351&text=${encodeURIComponent(mensajeWhatsapp)}`;
+        
+        // Abrir WhatsApp en una nueva pestaña
         window.open(whatsappUrl, '_blank');
     };
 
@@ -26,6 +35,7 @@ const ContactSection = () => {
             <Container>
                 <form onSubmit={handleSubmit} aria-labelledby="contact-form">
                     <TextField
+                        id="nombre"
                         label="Nombre"
                         name="nombre"
                         variant="outlined"
@@ -35,14 +45,16 @@ const ContactSection = () => {
                         color="secondary"
                         value={formData.nombre}
                         onChange={handleChange}
-                        autoComplete="name" // Agregado atributo autocomplete para nombre
+                        autoComplete="name"
                         inputProps={{ 'aria-label': 'Nombre' }}
                         sx={{
                             transition: 'border-color 0.3s',
                             '&:hover': { borderColor: '#E53935' }
                         }}
                     />
+
                     <TextField
+                        id="email"
                         label="Email"
                         name="email"
                         variant="outlined"
@@ -52,39 +64,47 @@ const ContactSection = () => {
                         color="secondary"
                         value={formData.email}
                         onChange={handleChange}
-                        autoComplete="email" // Agregado atributo autocomplete para email
+                        autoComplete="email"
                         inputProps={{ 'aria-label': 'Email' }}
                         sx={{
                             transition: 'border-color 0.3s',
                             '&:hover': { borderColor: '#E53935' }
                         }}
                     />
-                    <TextField
-                        label="Mensaje"
-                        name="mensaje"
-                        variant="outlined"
-                        fullWidth
-                        required
-                        margin="normal"
-                        color="secondary"
-                        value={formData.mensaje}
-                        onChange={handleChange}
-                        autoComplete="off" // Agregado para que no autocomplete el mensaje
-                        inputProps={{ 'aria-label': 'Mensaje' }}
-                        multiline
-                        minRows={4}
-                        sx={{
-                            transition: 'border-color 0.3s',
-                            '&:hover': { borderColor: '#E53935' }
-                        }}
-                    />
+<TextField
+    id="mensaje"
+    label="Mensaje"
+    name="mensaje"
+    variant="outlined"
+    fullWidth
+    required
+    margin="normal"
+    color="secondary"
+    value={formData.mensaje}
+    onChange={handleChange}
+    autoComplete="off"
+    multiline
+    minRows={4}
+    InputProps={{
+        'aria-label': 'Mensaje',
+    }}
+    sx={{
+        transition: 'border-color 0.3s',
+        '&:hover': { borderColor: '#E53935' }
+    }}
+/>
+
+
                     <Button 
                         variant="contained" 
                         color="primary" 
                         type="submit" 
-                        sx={{ marginTop: '20px', transition: 'background-color 0.3s' }}
-                        onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#BDBDBD'}
-                        onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#E53935'}>
+                        sx={{
+                            marginTop: '20px', 
+                            transition: 'background-color 0.3s',
+                            '&:hover': { backgroundColor: '#BDBDBD' }
+                        }}
+                    >
                         Enviar
                     </Button>
                 </form>
