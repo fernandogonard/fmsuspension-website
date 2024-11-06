@@ -1,31 +1,30 @@
-// ServicesComponent.jsx
 import React from 'react';
 import './ServicesComponent.css';
 import { FaWrench, FaOilCan, FaBalanceScale, FaCheckCircle } from 'react-icons/fa';
 
 const services = [
   {
-    icon: <FaWrench aria-hidden="true" />,
+    icon: <FaWrench aria-label="Icono de herramienta" />,
     title: 'Tren delantero y trasero',
     description: 'Mantén la estabilidad de tu vehículo con nuestro servicio de tren delantero y trasero. Ajustamos para un manejo suave.',
   },
   {
-    icon: <FaBalanceScale aria-hidden="true" />,
+    icon: <FaBalanceScale aria-label="Icono de balanceo" />,
     title: 'Alineación, balanceo y rotación',
     description: 'Mejora el desgaste de tus neumáticos y la conducción con alineación, balanceo y rotación profesional.',
   },
   {
-    icon: <FaOilCan aria-hidden="true" />,
+    icon: <FaOilCan aria-label="Icono de aceite" />,
     title: 'Frenos',
     description: 'Tu seguridad es primordial. Ofrecemos servicios completos de frenos para un rendimiento óptimo.',
   },
   {
-    icon: <FaWrench aria-hidden="true" />,
+    icon: <FaWrench aria-label="Icono de herramienta" />,
     title: 'Service',
     description: 'Servicios preventivos en distribución y filtros, aceite y control de fluidos de tu vehículo.',
   },
   {
-    icon: <FaCheckCircle aria-hidden="true" />,
+    icon: <FaCheckCircle aria-label="Icono de cheque" />,
     title: 'Pre-Post VTV',
     description: 'Listo para la verificación técnica. Aseguramos que tu vehículo cumpla los estándares requeridos.',
   },
@@ -34,6 +33,7 @@ const services = [
 const ServicesComponent = () => {
   return (
     <div className="services-container" aria-labelledby="services-title">
+     
       <div className="services-list">
         {services.map((service, index) => (
           <div key={index} className="service-card1" aria-labelledby={`service-title-${index}`}>
