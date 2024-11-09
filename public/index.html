@@ -26,7 +26,7 @@
     <style>
       /* Estilos en línea para evitar destellos sin estilo (FOUC) */
       #menu {
-        visibility: hidden; /* Cambiar a visibility: hidden; */
+        visibility: hidden;
         opacity: 0;
         position: absolute;
         top: 50px;
@@ -36,11 +36,11 @@
         transition: opacity 0.2s ease;
       }
       #menu.hidden {
-        visibility: hidden; /* Se oculta con visibility */
+        visibility: hidden;
         opacity: 0;
       }
       #menu.visible {
-        visibility: visible; /* Se muestra con visibility */
+        visibility: visible;
         opacity: 1;
       }
     </style>
@@ -66,14 +66,24 @@
         // Mostrar u ocultar el menú
         document.addEventListener("click", function (event) {
           if (menu.contains(event.target) && event.target.tagName === "A") {
+            // Cerrar el menú al hacer clic en un enlace dentro del menú
             menu.classList.add("hidden");
-          } else if (menu.contains(event.target)) {
+            menu.classList.remove("visible");
+          } else if (!menu.contains(event.target)) {
+            // Cerrar el menú si se hace clic fuera del menú
+            menu.classList.add("hidden");
+            menu.classList.remove("visible");
+          } else {
+            // Alternar la visibilidad si se hace clic en el menú
             menu.classList.toggle("hidden");
             menu.classList.toggle("visible");
-          } else {
-            menu.classList.add("hidden");
           }
         });
+
+        // Ejemplo de listener de scroll con opción 'passive'
+        window.addEventListener("scroll", function() {
+          // Puedes incluir aquí cualquier función que maneje el scroll
+        }, { passive: true });
       });
     </script>
 
