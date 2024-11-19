@@ -1,0 +1,23 @@
+#menu {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    transform: translateY(-10px)
+  }
+  
+  #menu.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-10px)
+  }
+  
+  #menu.visible {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0)
+  }

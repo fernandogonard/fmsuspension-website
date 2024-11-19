@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, TextField, Button } from '@mui/material';
+import './ContactSection.css';
 
 const ContactSection = () => {
     const [formData, setFormData] = useState({
@@ -31,84 +31,48 @@ const ContactSection = () => {
     };
 
     return (
-        <section id="contact" style={{ padding: '50px 0', backgroundColor: '#424242' }}>
-            <Container>
-                <form onSubmit={handleSubmit} aria-labelledby="contact-form">
-                    <TextField
-                        id="nombre"
-                        label="Nombre"
-                        name="nombre"
-                        variant="outlined"
-                        fullWidth
-                        required
-                        margin="normal"
-                        color="secondary"
-                        value={formData.nombre}
-                        onChange={handleChange}
-                        autoComplete="name"
-                        inputProps={{ 'aria-label': 'Nombre' }}
-                        sx={{
-                            transition: 'border-color 0.3s',
-                            '&:hover': { borderColor: '#E53935' }
-                        }}
-                    />
+        <section id="contact" className="contact-section">
+            <div className="container">
+                <form onSubmit={handleSubmit} className="contact-form">
+                    <div className="form-group">
+                        <label htmlFor="nombre">Nombre</label>
+                        <input 
+                            type="text" 
+                            id="nombre" 
+                            name="nombre" 
+                            value={formData.nombre} 
+                            onChange={handleChange} 
+                            required 
+                        />
+                    </div>
 
-                    <TextField
-                        id="email"
-                        label="Email"
-                        name="email"
-                        variant="outlined"
-                        fullWidth
-                        required
-                        margin="normal"
-                        color="secondary"
-                        value={formData.email}
-                        onChange={handleChange}
-                        autoComplete="email"
-                        inputProps={{ 'aria-label': 'Email' }}
-                        sx={{
-                            transition: 'border-color 0.3s',
-                            '&:hover': { borderColor: '#E53935' }
-                        }}
-                    />
-<TextField
-    id="mensaje"
-    label="Mensaje"
-    name="mensaje"
-    variant="outlined"
-    fullWidth
-    required
-    margin="normal"
-    color="secondary"
-    value={formData.mensaje}
-    onChange={handleChange}
-    autoComplete="off"
-    multiline
-    minRows={4}
-    InputProps={{
-        'aria-label': 'Mensaje',
-    }}
-    sx={{
-        transition: 'border-color 0.3s',
-        '&:hover': { borderColor: '#E53935' }
-    }}
-/>
+                    <div className="form-group">
+                        <label htmlFor="email">Email</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            value={formData.email} 
+                            onChange={handleChange} 
+                            required 
+                        />
+                    </div>
 
+                    <div className="form-group">
+                        <label htmlFor="mensaje">Mensaje</label>
+                        <textarea 
+                            id="mensaje" 
+                            name="mensaje" 
+                            rows="4" 
+                            value={formData.mensaje} 
+                            onChange={handleChange} 
+                            required 
+                        ></textarea>
+                    </div>
 
-                    <Button 
-                        variant="contained" 
-                        color="primary" 
-                        type="submit" 
-                        sx={{
-                            marginTop: '20px', 
-                            transition: 'background-color 0.3s',
-                            '&:hover': { backgroundColor: '#BDBDBD' }
-                        }}
-                    >
-                        Enviar
-                    </Button>
+                    <button type="submit" className="submit-button">Enviar</button>
                 </form>
-            </Container>
+            </div>
         </section>
     );
 };
