@@ -37,7 +37,7 @@ const Footer = () => {
                         <IconButton color="primary" href="https://instagram.com/fmsuspension" target="_blank" aria-label="Instagram" sx={{ bgcolor: '#fff', '&:hover': { bgcolor: theme.palette.primary.light } }}>
                             <InstagramIcon sx={{ color: theme.palette.primary.main }} />
                         </IconButton>
-                        <IconButton color="primary" href="https://wa.me/5491134567890" target="_blank" aria-label="WhatsApp" sx={{ bgcolor: '#fff', '&:hover': { bgcolor: theme.palette.primary.light } }}>
+                        <IconButton color="primary" href="https://wa.me/5492236003351" target="_blank" aria-label="WhatsApp" sx={{ bgcolor: '#fff', '&:hover': { bgcolor: theme.palette.primary.light } }}>
                             <WhatsAppIcon sx={{ color: theme.palette.primary.main }} />
                         </IconButton>
                     </Box>
@@ -48,15 +48,15 @@ const Footer = () => {
                     </Typography>
                     <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
                         <RoomIcon sx={{ mr: 1, color: 'primary.main' }} />
-                        <Typography variant="body1" sx={{ opacity: 0.85 }}>Av. Siempre Viva 123, Buenos Aires</Typography>
+                        <Typography variant="body1" sx={{ opacity: 0.85 }}>Ituzaingó 5848, Mar del Plata, Argentina</Typography>
                     </Box>
                     <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
                         <PhoneIcon sx={{ mr: 1, color: 'primary.main' }} />
-                        <Typography variant="body1" sx={{ opacity: 0.85 }}>+54 11 3456-7890</Typography>
+                        <Typography variant="body1" sx={{ opacity: 0.85 }}><a href="tel:+5492236003351" style={{ color: '#fff', textDecoration: 'underline' }}>+54 9 2236003351</a></Typography>
                     </Box>
                     <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
                         <EmailIcon sx={{ mr: 1, color: 'primary.main' }} />
-                        <Typography variant="body1" sx={{ opacity: 0.85 }}>info@fmsuspension.com</Typography>
+                        <Typography variant="body1" sx={{ opacity: 0.85 }}><a href="mailto:matiasalbertofemenia@gmail.com" style={{ color: '#fff', textDecoration: 'underline' }}>matiasalbertofemenia@gmail.com</a></Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} md={4}>
