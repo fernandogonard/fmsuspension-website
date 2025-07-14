@@ -1,94 +1,95 @@
 import React, { useState } from 'react';
-import { AppBar, Toolbar, IconButton, Menu, MenuItem, Button, useMediaQuery } from '@mui/material';
-import { Menu as MenuIcon } from '@mui/icons-material';
+import { AppBar, Toolbar, IconButton, Button, useMediaQuery, Drawer, List, ListItem, ListItemButton, ListItemText, Box } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 import { Link } from 'react-scroll';
 import banerfm from '../assets/banerfm.png';
 
 const Navbar = () => {
-  const [anchorEl, setAnchorEl] = useState(null);
-  const isMobile = useMediaQuery('(max-width:600px)');
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const isMobile = useMediaQuery('(max-width:900px)');
 
-  const handleMenuToggle = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
+  const sections = [
+    { label: 'Inicio', to: 'inicio' },
+    { label: 'Servicios', to: 'services' },
+    { label: 'Testimonios', to: 'testimonials' },
+    { label: 'Contacto', to: 'contact' },
+  ];
 
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-  };
-
-  const handleMenuItemClick = (section) => {
-    // Usamos un callback para hacer scroll y cerrar el menú después de navegar
-    const scrollToSection = () => {
-      handleMenuClose();
-    };
-
-    return (
-      <Link
-        to={section.toLowerCase()}
-        smooth
-        duration={500}
-        offset={-70}
-        onClick={scrollToSection} // Se ejecuta al completar el scroll
-        aria-label={`Ir a sección ${section}`}
-      >
-        {section}
-      </Link>
-    );
+  const handleDrawerToggle = () => {
+    setDrawerOpen(!drawerOpen);
   };
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: 'black' }}>
-      <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <img 
-          src={banerfm} 
-          alt="Banner de FMSuspensión - Servicios de suspensión" 
-          style={{ 
-            height: 'auto', 
-            width: '100%', 
-            maxWidth: '250px',  // Ajusta el tamaño máximo para que no ocupe demasiado espacio
-            objectFit: 'cover' 
-          }} 
-          aria-label="Logo de FMSuspensión"
-        />
+    <AppBar position="fixed" sx={{ backgroundColor: 'black', zIndex: 1201 }}>
+      <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', minHeight: 70 }}>
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+          <img 
+            src={banerfm} 
+            alt="Banner de FMSuspensión - Servicios de suspensión" 
+            style={{ height: 50, width: 'auto', maxWidth: 200, objectFit: 'cover' }} 
+            aria-label="Logo de FMSuspensión"
+          />
+        </Box>
         {isMobile ? (
           <>
             <IconButton
               edge="end"
               color="inherit"
               aria-label="Abrir menú"
-              onClick={handleMenuToggle}
+              onClick={handleDrawerToggle}
+              size="large"
             >
               <MenuIcon />
             </IconButton>
-            <Menu
-              id="mobile-menu"
-              anchorEl={anchorEl}
-              open={Boolean(anchorEl)}
-              onClose={handleMenuClose}
+            <Drawer
+              anchor="right"
+              open={drawerOpen}
+              onClose={handleDrawerToggle}
+              PaperProps={{ sx: { width: 220, backgroundColor: '#222' } }}
             >
-              {['Inicio', 'Servicios', 'Testimonios', 'Contacto'].map((section, index) => (
-                <MenuItem key={index} onClick={handleMenuClose}>
-                  {handleMenuItemClick(section)}
-                </MenuItem>
-              ))}
-            </Menu>
+              <Box sx={{ display: 'flex', justifyContent: 'flex-end', p: 1 }}>
+                <IconButton onClick={handleDrawerToggle} color="inherit">
+                  <CloseIcon />
+                </IconButton>
+              </Box>
+              <List>
+                {sections.map((section, index) => (
+                  <ListItem key={index} disablePadding>
+                    <ListItemButton onClick={handleDrawerToggle}>
+                      <Link
+                        to={section.to}
+                        smooth
+                        duration={500}
+                        offset={-70}
+                        style={{ color: '#fff', width: '100%', display: 'block', textDecoration: 'none', fontWeight: 500 }}
+                        aria-label={`Ir a sección ${section.label}`}
+                      >
+                        <ListItemText primary={section.label} />
+                      </Link>
+                    </ListItemButton>
+                  </ListItem>
+                ))}
+              </List>
+            </Drawer>
           </>
         ) : (
-          <div style={{ display: 'flex', gap: '15px' }}>
-            {['Inicio', 'Servicios', 'Testimonios', 'Contacto'].map((section, index) => (
-              <Button key={index} color="inherit">
+          <Box sx={{ display: 'flex', gap: 2 }}>
+            {sections.map((section, index) => (
+              <Button key={index} color="inherit" sx={{ fontWeight: 600, fontSize: 16 }}>
                 <Link 
-                  to={section.toLowerCase()} 
-                  smooth 
-                  duration={500} 
-                  style={{ color: '#FFFFFF' }}
-                  aria-label={`Ir a sección ${section}`}
+                  to={section.to}
+                  smooth
+                  duration={500}
+                  offset={-70}
+                  style={{ color: '#FFFFFF', textDecoration: 'none' }}
+                  aria-label={`Ir a sección ${section.label}`}
                 >
-                  {section}
+                  {section.label}
                 </Link>
               </Button>
             ))}
-          </div>
+          </Box>
         )}
       </Toolbar>
     </AppBar>

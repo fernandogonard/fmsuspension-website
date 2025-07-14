@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { CssBaseline, ThemeProvider, createTheme, CircularProgress } from '@mui/material';
+import { CssBaseline, ThemeProvider, createTheme, CircularProgress, Box, Typography } from '@mui/material';
 import { Element } from 'react-scroll';
 import { Helmet } from 'react-helmet-async'; // Importa Helmet para mejorar las meta etiquetas
 import './App.css';
@@ -58,51 +58,51 @@ function App() {
                     <SlideBack />
 
                     {/* Encabezado H1 para SEO */}
+
                     <Element name="inicio" aria-label="Inicio">
-                        <h1 style={{ display: 'none' }}>Mecánica de Confianza en Mar del Plata</h1> {/* Encabezado principal, oculto pero accesible para SEO */}
-                        <h1>Mecánica de Confianza en Mar del Plata</h1> {/* Título visible en la página */}
+                        <Typography variant="h2" align="center" color="primary" sx={{ fontWeight: 'bold', mt: 10, mb: 6, fontSize: { xs: 28, sm: 36, md: 44 } }}>
+                            Mecánica de Confianza en Mar del Plata
+                        </Typography>
                     </Element>
 
-                    <section aria-labelledby="servicios-title">
-                        <Element name="servicios">
-                            <h2 id="servicios-title">Nuestros Servicios</h2>
+                    <Element name="services">
+                        <Box sx={{ py: { xs: 5, md: 8 }, maxWidth: 1200, mx: 'auto', bgcolor: '#232323', borderRadius: 4, my: 4, boxShadow: 3, minHeight: '1px' }}>
                             <ServicesComponent />
-                        </Element>
-                    </section>
+                        </Box>
+                    </Element>
 
-                    <section aria-labelledby="promociones-title">
-                        <Element name="promociones">
-                            <h2 id="promociones-title">Promociones Especiales</h2>
+                    <Element name="promociones">
+                        <Box sx={{ py: { xs: 5, md: 8 }, maxWidth: 1200, mx: 'auto', bgcolor: '#232323', borderRadius: 4, my: 4, boxShadow: 3, minHeight: '1px' }}>
                             <PromotionsSection />
-                        </Element>
-                    </section>
+                        </Box>
+                    </Element>
 
-                    <section aria-labelledby="about-us-title">
-                        <Element name="sobre-nosotros">
-                            <h2 id="about-us-title">Sobre Nosotros</h2>
+                    <Element name="sobre-nosotros">
+                        <Box sx={{ py: { xs: 5, md: 8 }, maxWidth: 1000, mx: 'auto', bgcolor: '#232323', borderRadius: 4, my: 4, boxShadow: 3, minHeight: '1px' }}>
                             <AboutUs />
-                        </Element>
-                    </section>
+                        </Box>
+                    </Element>
 
-                    <section aria-labelledby="testimonios-title">
-                        <Element name="testimonios">
-                            <h2 id="testimonios-title">La opinion de  nuestros Clientes</h2>
+                    <Element name="testimonials">
+                        <Box sx={{ py: { xs: 5, md: 8 }, maxWidth: 900, mx: 'auto', bgcolor: '#232323', borderRadius: 4, my: 4, boxShadow: 3, minHeight: '1px' }}>
                             <TestimonialsSection />
-                        </Element>
-                    </section>
+                        </Box>
+                    </Element>
 
-                    <section aria-labelledby="contacto-title">
-                        <Element name="contacto">
-                            <h2 id="contacto-title">Contáctanos</h2>
+                    <Element name="contact">
+                        <Box sx={{ py: { xs: 5, md: 8 }, maxWidth: 600, mx: 'auto', bgcolor: '#232323', borderRadius: 4, my: 4, boxShadow: 3, minHeight: '1px' }}>
                             <ContactSection />
-                        </Element>
-                    </section>
+                        </Box>
+                    </Element>
 
-                    {/* Título de Dónde ubicarnos y Mapa */}
-                    <section aria-labelledby="ubicacion-title">
-                        <h2 id="ubicacion-title">Dónde encontrarnos</h2>
-                        <MapContainer />
-                    </section>
+                    <Element name="ubicacion">
+                        <Box sx={{ py: { xs: 5, md: 8 }, maxWidth: 900, mx: 'auto', bgcolor: '#232323', borderRadius: 4, my: 4, boxShadow: 3, minHeight: '1px' }}>
+                            <Typography variant="h4" align="center" color="primary" sx={{ fontWeight: 'bold', mb: 4 }}>
+                                Dónde encontrarnos
+                            </Typography>
+                            <MapContainer />
+                        </Box>
+                    </Element>
 
                     {/* Botón de WhatsApp */}
                     <WhatsAppButton />

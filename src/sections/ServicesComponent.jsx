@@ -1,6 +1,10 @@
 import React from 'react';
-import './ServicesComponent.css';
 import { FaWrench, FaOilCan, FaBalanceScale, FaCheckCircle } from 'react-icons/fa';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
+import { keyframes } from '@mui/system';
 
 const services = [
   {
@@ -30,20 +34,71 @@ const services = [
   },
 ];
 
+const fadeInUp = keyframes`
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: none; }
+`;
+
 const ServicesComponent = () => {
   return (
-    <div className="services-container" aria-labelledby="services-title">
-     
-      <div className="services-list">
+    <Box id="services" sx={{ py: { xs: 4, md: 8 }, px: { xs: 1, sm: 2 }, background: 'transparent' }}>
+      <Typography
+        variant="h3"
+        align="center"
+        color="primary"
+        sx={{ fontWeight: 800, mb: 6, letterSpacing: 1, fontSize: { xs: 28, sm: 36, md: 44 } }}
+      >
+        Nuestros Servicios
+      </Typography>
+      <Grid container spacing={{ xs: 3, md: 4 }} justifyContent="center">
         {services.map((service, index) => (
-          <div key={index} className="service-card1" aria-labelledby={`service-title-${index}`}>
-            <div className="service-icon">{service.icon}</div>
-            <h3 id={`service-title-${index}`} className="service-title">{service.title}</h3>
-            <p className="service-description">{service.description}</p>
-          </div>
+          <Grid item xs={12} sm={6} md={4} key={index}>
+            <Paper
+              elevation={8}
+              sx={{
+                p: { xs: 3, md: 4 },
+                textAlign: 'center',
+                borderRadius: 4,
+                minHeight: 240,
+                background: '#353535',
+                color: '#fff',
+                boxShadow: '0 8px 32px 0 rgba(0,0,0,0.18)',
+                transition: 'transform 0.3s, box-shadow 0.3s',
+                cursor: 'pointer',
+                animation: `${fadeInUp} 0.7s cubic-bezier(.39,.575,.565,1) both`,
+                animationDelay: `${index * 0.1 + 0.2}s`,
+                '&:hover': {
+                  transform: 'translateY(-8px) scale(1.04)',
+                  boxShadow: '0 16px 40px 0 rgba(229,57,53,0.18)',
+                  background: '#222',
+                },
+              }}
+            >
+              <Box
+                sx={{
+                  fontSize: 56,
+                  color: 'primary.main',
+                  mb: 2,
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  transition: 'color 0.3s',
+                  '&:hover': { color: '#fff' },
+                }}
+              >
+                {service.icon}
+              </Box>
+              <Typography variant="h6" sx={{ fontWeight: 700, mb: 1, color: 'primary.main', fontSize: 22 }}>
+                {service.title}
+              </Typography>
+              <Typography variant="body1" color="#e0e0e0" sx={{ fontSize: 16, lineHeight: 1.5 }}>
+                {service.description}
+              </Typography>
+            </Paper>
+          </Grid>
         ))}
-      </div>
-    </div>
+      </Grid>
+    </Box>
   );
 };
 
