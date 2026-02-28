@@ -2,7 +2,7 @@ import React from 'react';
 import { Typography, Box, IconButton, Divider, Grid } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { Link as ScrollLink } from 'react-scroll';
-import { INSTAGRAM_URL, FACEBOOK_URL, ADDRESS, EMAIL, PHONE_NUMBER } from '../config/constants';
+import { INSTAGRAM_URL, FACEBOOK_URL, ADDRESS, EMAIL, PHONE_NUMBER, whatsappLink } from '../config/constants';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import RoomIcon from '@mui/icons-material/Room';
 import PhoneIcon from '@mui/icons-material/Phone';
@@ -39,7 +39,7 @@ const Footer = () => {
                         <IconButton color="primary" href={INSTAGRAM_URL} target="_blank" aria-label="Instagram" sx={{ bgcolor: '#fff', '&:hover': { bgcolor: theme.palette.primary.light } }}>
                             <InstagramIcon sx={{ color: theme.palette.primary.main }} />
                         </IconButton>
-                        <IconButton color="primary" href="https://wa.me/5492236003351" target="_blank" aria-label="WhatsApp" sx={{ bgcolor: '#fff', '&:hover': { bgcolor: theme.palette.primary.light } }}>
+                        <IconButton color="primary" href={whatsappLink('Hola, necesito información sobre FMSuspensión.')} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" sx={{ bgcolor: '#fff', '&:hover': { bgcolor: theme.palette.primary.light } }}>
                             <WhatsAppIcon sx={{ color: theme.palette.primary.main }} />
                         </IconButton>
                     </Box>

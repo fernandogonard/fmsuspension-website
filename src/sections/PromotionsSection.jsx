@@ -76,6 +76,8 @@ const PromotionsSection = () => {
                                 variant="contained"
                                 color="primary"
                                 href={promo.buttonLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 sx={{
                                     mt: 2,
                                     fontWeight: 700,

@@ -65,7 +65,7 @@ function App() {
       },
       "openingHours": "Mo-Fr 08:00-18:00",
       "priceRange": "$$",
-      "sameAs": ["https://fmsuspension.netlify.app/"]
+      "sameAs": ["https://fmsuspension.netlify.app/", "https://www.instagram.com/fm_suspension/", "https://www.facebook.com/fmsuspension"]
     })}</script>
 </Helmet>
 
