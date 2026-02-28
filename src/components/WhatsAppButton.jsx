@@ -2,14 +2,11 @@
 import React from 'react';
 import './WhatsAppButton.css';
 import whatsappIcon from '../assets/whatsapp-icon.png';
+import { whatsappLink } from '../config/constants';
 
-const WhatsAppButton = () => {
-    const phoneNumber = "+5492236003351";
-    const message = "Hola, estoy interesado en los servicios de FMSuspensión.";
-
-    return (
-        <a
-                href={`https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`}
+const WhatsAppButton = () => (
+    <a
+                href={whatsappLink('Hola, estoy interesado en los servicios de FMSuspensión.')}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="whatsapp-button"
@@ -22,7 +19,6 @@ const WhatsAppButton = () => {
                     loading="lazy"
                 />
             </a>
-    );
-};
+);
 
 export default WhatsAppButton;

@@ -1,26 +1,26 @@
-// src/components/PromotionsSection.js
 import React from 'react';
 import { Typography, Paper, Button, Grid, Box } from '@mui/material';
 import { keyframes } from '@mui/system';
+import { whatsappLink, INSTAGRAM_URL } from '../config/constants';
 
 const promotions = [
     { 
         title: "20% de Descuento en Alineación y Balanceo", 
         description: "Aprovecha un 20% de descuento en nuestros servicios de alineación y balanceo durante todo el mes.", 
-        buttonText: "WhatsApp",
-        buttonLink: "https://api.whatsapp.com/send?phone=+5492236003351&text=Hola,%20estoy%20interesado%20en%20el%20descuento%20de%20alineación%20y%20balanceo.",
+        buttonText: "Consultar por WhatsApp",
+        buttonLink: whatsappLink('Hola, estoy interesado en el descuento de alineación y balanceo.'),
     },
     { 
         title: "Control Pre VTV - Sin Cargo", 
         description: "Obtén un control pre VTV gratuito al seguirnos y compartir nuestro Instagram. ¡Aprovecha esta oferta exclusiva!", 
-        buttonText: "Síguenos en Instagram",
-        buttonLink: "https://www.instagram.com/fm_suspension/",
+        buttonText: "Seguir en Instagram",
+        buttonLink: INSTAGRAM_URL,
     },
     { 
         title: "Descuentos Especiales para Taxis y Remises", 
         description: "Recibe descuentos exclusivos en todos nuestros servicios al seguirnos en Instagram. ¡Ideal para taxis y remises!", 
-        buttonText: "Síguenos en Instagram",
-        buttonLink: "https://www.instagram.com/fm_suspension/",
+        buttonText: "Seguir en Instagram",
+        buttonLink: INSTAGRAM_URL,
     },
 ];
 

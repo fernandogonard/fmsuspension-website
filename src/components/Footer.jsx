@@ -2,6 +2,7 @@ import React from 'react';
 import { Typography, Box, IconButton, Divider, Grid } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { Link as ScrollLink } from 'react-scroll';
+import { INSTAGRAM_URL, FACEBOOK_URL, ADDRESS, EMAIL, PHONE_NUMBER } from '../config/constants';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import RoomIcon from '@mui/icons-material/Room';
 import PhoneIcon from '@mui/icons-material/Phone';
@@ -32,10 +33,10 @@ const Footer = () => {
                         Soluciones profesionales en suspensión y dirección automotriz.
                     </Typography>
                     <Box sx={{ display: 'flex', gap: 2, mt: 2 }}>
-                        <IconButton color="primary" href="https://facebook.com/fmsuspension" target="_blank" aria-label="Facebook" sx={{ bgcolor: '#fff', '&:hover': { bgcolor: theme.palette.primary.light } }}>
+                        <IconButton color="primary" href={FACEBOOK_URL} target="_blank" aria-label="Facebook" sx={{ bgcolor: '#fff', '&:hover': { bgcolor: theme.palette.primary.light } }}>
                             <FacebookIcon sx={{ color: theme.palette.primary.main }} />
                         </IconButton>
-                        <IconButton color="primary" href="https://www.instagram.com/fm_suspension/" target="_blank" aria-label="Instagram" sx={{ bgcolor: '#fff', '&:hover': { bgcolor: theme.palette.primary.light } }}>
+                        <IconButton color="primary" href={INSTAGRAM_URL} target="_blank" aria-label="Instagram" sx={{ bgcolor: '#fff', '&:hover': { bgcolor: theme.palette.primary.light } }}>
                             <InstagramIcon sx={{ color: theme.palette.primary.main }} />
                         </IconButton>
                         <IconButton color="primary" href="https://wa.me/5492236003351" target="_blank" aria-label="WhatsApp" sx={{ bgcolor: '#fff', '&:hover': { bgcolor: theme.palette.primary.light } }}>
@@ -49,15 +50,15 @@ const Footer = () => {
                     </Typography>
                     <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
                         <RoomIcon sx={{ mr: 1, color: 'primary.main' }} />
-                        <Typography variant="body1" sx={{ opacity: 0.85 }}>Ituzaingó 5848, Mar del Plata, Argentina</Typography>
+                        <Typography variant="body1" sx={{ opacity: 0.85 }}>{ADDRESS}, Argentina</Typography>
                     </Box>
                     <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
                         <PhoneIcon sx={{ mr: 1, color: 'primary.main' }} />
-                        <Typography variant="body1" sx={{ opacity: 0.85 }}><a href="tel:+5492236003351" style={{ color: '#fff', textDecoration: 'underline' }}>+54 9 2236003351</a></Typography>
+                        <Typography variant="body1" sx={{ opacity: 0.85 }}><a href={`tel:${PHONE_NUMBER}`} style={{ color: '#fff', textDecoration: 'underline' }}>{PHONE_NUMBER}</a></Typography>
                     </Box>
                     <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
                         <EmailIcon sx={{ mr: 1, color: 'primary.main' }} />
-                        <Typography variant="body1" sx={{ opacity: 0.85 }}><a href="mailto:matiasalbertofemenia@gmail.com" style={{ color: '#fff', textDecoration: 'underline' }}>matiasalbertofemenia@gmail.com</a></Typography>
+                        <Typography variant="body1" sx={{ opacity: 0.85 }}><a href={`mailto:${EMAIL}`} style={{ color: '#fff', textDecoration: 'underline' }}>{EMAIL}</a></Typography>
                     </Box>
                 </Grid>
                 <Grid item xs={12} md={4}>

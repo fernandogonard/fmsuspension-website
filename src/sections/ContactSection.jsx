@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { whatsappLink } from '../config/constants';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert from '@mui/material/Alert';
 import TextField from '@mui/material/TextField';
@@ -37,8 +38,7 @@ const ContactSection = () => {
             return;
         }
 
-        const mensajeWhatsapp = `Hola, soy ${nombre}. Mi correo es: ${email}. Mensaje: ${mensaje}`;
-        const whatsappUrl = `https://api.whatsapp.com/send?phone=+5492236003351&text=${encodeURIComponent(mensajeWhatsapp)}`;
+        const whatsappUrl = whatsappLink(`Hola, soy ${nombre}. Mi correo es: ${email}. Mensaje: ${mensaje}`);
         window.open(whatsappUrl, '_blank');
         setFormData({ nombre: '', email: '', mensaje: '' });
         setSnackbar({ open: true, message: 'Redirigiendo a WhatsApp...', severity: 'success' });

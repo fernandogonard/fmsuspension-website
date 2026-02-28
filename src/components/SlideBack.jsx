@@ -3,6 +3,7 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper/modules';
 import { FaMapMarkerAlt, FaCogs } from 'react-icons/fa';
+import { PHONE_NUMBER, whatsappLink, ADDRESS } from '../config/constants';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -28,12 +29,9 @@ const slidesData = [
   { image: image8, alt: 'Reparación de neumáticos para Nissan Versa en FMSuspensión - Servicios de alineación y balanceo de alta calidad.' },
 ];
 
-const phoneNumber = "+5492236003351";
-
 const SlideBack = () => {
   const handleServiceRequest = (service) => {
-    const msg = `Hola, estoy interesado en el servicio de ${service} en FMSuspensión.`;
-    window.open(`https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(msg)}`, '_blank');
+    window.open(whatsappLink(`Hola, estoy interesado en el servicio de ${service} en FMSuspensión.`), '_blank');
   };
 
   return (
@@ -69,7 +67,7 @@ const SlideBack = () => {
         <h1>FM SUSPENSION</h1>
         <p>
           <FaMapMarkerAlt className="location-icon" />
-          Ituzaingó 5848, Mar del Plata
+          {ADDRESS}
         </p>
         <p>Desde hace más de 15 años solucionando las necesidades de tu auto.</p>
 
@@ -89,7 +87,7 @@ const SlideBack = () => {
         </section>
 
         <a
-          href={`https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent('Hola, estoy interesado en los servicios de FMSuspensión.')}`}
+          href={whatsappLink('Hola, estoy interesado en los servicios de FMSuspensión.')}
           target="_blank"
           rel="noopener noreferrer"
           className="contact-button"

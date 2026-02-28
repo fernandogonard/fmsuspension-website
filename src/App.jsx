@@ -45,7 +45,7 @@ function App() {
     {/* Metaetiquetas de Open Graph */}
     <meta property="og:title" content="Mecánica de Confianza en Mar del Plata - FMSuspensión" />
     <meta property="og:description" content="Expertos en reparación automotriz en Mar del Plata. Ofrecemos servicios de alta calidad con tecnología avanzada y personal comprometido con el cliente." />
-    <meta property="og:image" content="https://fmsuspension.netlify.app/og-image.jpg" />
+    <meta property="og:image" content="https://fmsuspension.netlify.app/og-image.png" />
     <meta property="og:url" content="https://fmsuspension.netlify.app/" />
     <meta property="og:type" content="website" />
     <script type="application/ld+json">{JSON.stringify({
@@ -54,6 +54,7 @@ function App() {
       "name": "FMSuspensi\u00f3n",
       "description": "Taller mec\u00e1nico especializado en suspensi\u00f3n, alineaci\u00f3n, balanceo y frenos en Mar del Plata.",
       "url": "https://fmsuspension.netlify.app/",
+      "image": "https://fmsuspension.netlify.app/og-image.png",
       "telephone": "+5492236003351",
       "address": {
         "@type": "PostalAddress",
