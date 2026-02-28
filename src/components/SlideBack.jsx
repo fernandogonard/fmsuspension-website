@@ -89,7 +89,7 @@ const SlideBack = () => {
         </section>
 
         <a
-          href={`https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(whatsappMessage)}`}
+          href={`https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent('Hola, estoy interesado en los servicios de FMSuspensión.')}`}
           target="_blank"
           rel="noopener noreferrer"
           className="contact-button"
