@@ -1,7 +1,8 @@
 import React, { Suspense } from 'react';
 import { CssBaseline, ThemeProvider, createTheme, CircularProgress, Box, Typography } from '@mui/material';
 import { Element } from 'react-scroll';
-import { Helmet } from 'react-helmet-async'; // Importa Helmet para mejorar las meta etiquetas
+import { Helmet } from 'react-helmet-async';
+import ErrorBoundary from './components/ErrorBoundary';
 import './App.css';
 import './components/SlideBack.css';
 
@@ -44,12 +45,31 @@ function App() {
     {/* Metaetiquetas de Open Graph */}
     <meta property="og:title" content="Mecánica de Confianza en Mar del Plata - FMSuspensión" />
     <meta property="og:description" content="Expertos en reparación automotriz en Mar del Plata. Ofrecemos servicios de alta calidad con tecnología avanzada y personal comprometido con el cliente." />
-    <meta property="og:image" content="URL_DE_LA_IMAGEN_COMPARTIBLE" /> {/* Reemplaza con la URL de una imagen representativa */}
-    <meta property="og:url" content="URL_DE_TU_SITIO_WEB" /> {/* Reemplaza con la URL del sitio web */}
+    <meta property="og:image" content="https://fmsuspension.netlify.app/og-image.jpg" />
+    <meta property="og:url" content="https://fmsuspension.netlify.app/" />
     <meta property="og:type" content="website" />
+    <script type="application/ld+json">{JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "AutoRepair",
+      "name": "FMSuspensi\u00f3n",
+      "description": "Taller mec\u00e1nico especializado en suspensi\u00f3n, alineaci\u00f3n, balanceo y frenos en Mar del Plata.",
+      "url": "https://fmsuspension.netlify.app/",
+      "telephone": "+5492236003351",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Ituzaing\u00f3 5848",
+        "addressLocality": "Mar del Plata",
+        "addressRegion": "Buenos Aires",
+        "addressCountry": "AR"
+      },
+      "openingHours": "Mo-Fr 08:00-18:00",
+      "priceRange": "$$",
+      "sameAs": ["https://fmsuspension.netlify.app/"]
+    })}</script>
 </Helmet>
 
-            <Suspense fallback={<div style={{ textAlign: 'center', padding: '50px' }}><CircularProgress color="primary" /><p>Cargando contenido, por favor espera...</p></div>}>
+            <ErrorBoundary>
+            <Suspense fallback={<Box sx={{ display:'flex', flexDirection:'column', alignItems:'center', py: 10 }}><CircularProgress color="primary" /><Typography sx={{ mt: 2, color: '#fff' }}>Cargando...</Typography></Box>}>
                 <header>
                     <Navbar />
                 </header>
@@ -110,6 +130,7 @@ function App() {
 
                 <Footer />
             </Suspense>
+            </ErrorBoundary>
         </ThemeProvider>
     );
 }

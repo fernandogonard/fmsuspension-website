@@ -1,7 +1,7 @@
 
 import React from "react";
-import { Helmet } from "react-helmet-async";
 import { Box, Typography, Container, Card, CardContent, useTheme } from "@mui/material";
+import quienessomos from "../assets/quienessomos.jpg";
 import { keyframes } from "@mui/system";
 
 const fadeInUp = keyframes`
@@ -13,19 +13,6 @@ export default function AboutUs() {
   const theme = useTheme();
   return (
     <>
-      <Helmet>
-        <title>FMSuspensión - Mecánicos de Confianza en Mar del Plata</title>
-        <meta
-          name="description"
-          content="En FMSuspensión, ofrecemos servicios de mecánica general, frenos, alineación, balanceo, y reparación, arreglo  de tren delantero en Mar del Plata. Somos tu taller de confianza para el mantenimiento de autos."
-        />
-        <meta
-          name="keywords"
-          content="mecánica general Mar del Plata, taller de frenos, alineación y balanceo Mar del Plata, mecánicos de autos Mar del Plata, tren delantero, reparación de autos Mar del Plata, taller de mecánica en Mar del Plata, frenos Mar del Plata"
-        />
-        <meta name="robots" content="index,follow" />
-      </Helmet>
-
       <Box
         component="section"
         sx={{
@@ -76,7 +63,7 @@ export default function AboutUs() {
                 }}
               >
                 <img
-                  src="/assets/quienessomos.jpg"
+                  src={quienessomos}
                   alt="Equipo de mecánicos de Mar del Plata con experiencia y dedicación"
                   style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 'inherit', border: 'none' }}
                   loading="lazy"

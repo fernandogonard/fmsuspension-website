@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaWrench, FaOilCan, FaBalanceScale, FaCheckCircle } from 'react-icons/fa';
+import { FaWrench, FaOilCan, FaBalanceScale, FaCheckCircle, FaCarSide } from 'react-icons/fa';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
@@ -8,26 +8,31 @@ import { keyframes } from '@mui/system';
 
 const services = [
   {
+    id: 'tren-delantero-trasero',
     icon: <FaWrench aria-label="Icono de herramienta" />,
     title: 'Tren delantero y trasero',
     description: 'Mantén la estabilidad de tu vehículo con nuestro servicio de tren delantero y trasero. Ajustamos para un manejo suave.',
   },
   {
+    id: 'alineacion-balanceo',
     icon: <FaBalanceScale aria-label="Icono de balanceo" />,
     title: 'Alineación, balanceo y rotación',
     description: 'Mejora el desgaste de tus neumáticos y la conducción con alineación, balanceo y rotación profesional.',
   },
   {
-    icon: <FaOilCan aria-label="Icono de aceite" />,
+    id: 'frenos',
+    icon: <FaCarSide aria-label="Icono de frenos" />,
     title: 'Frenos',
     description: 'Tu seguridad es primordial. Ofrecemos servicios completos de frenos para un rendimiento óptimo.',
   },
   {
-    icon: <FaWrench aria-label="Icono de herramienta" />,
+    id: 'service-preventivo',
+    icon: <FaOilCan aria-label="Icono de aceite" />,
     title: 'Service',
     description: 'Servicios preventivos en distribución y filtros, aceite y control de fluidos de tu vehículo.',
   },
   {
+    id: 'pre-post-vtv',
     icon: <FaCheckCircle aria-label="Icono de cheque" />,
     title: 'Pre-Post VTV',
     description: 'Listo para la verificación técnica. Aseguramos que tu vehículo cumpla los estándares requeridos.',
@@ -52,7 +57,7 @@ const ServicesComponent = () => {
       </Typography>
       <Grid container spacing={{ xs: 3, md: 4 }} justifyContent="center">
         {services.map((service, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
+          <Grid item xs={12} sm={6} md={4} key={service.id}>
             <Paper
               elevation={8}
               sx={{

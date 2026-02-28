@@ -1,6 +1,7 @@
 import React from 'react';
-import { Typography, Link, Box, IconButton, Divider, Grid } from '@mui/material';
+import { Typography, Box, IconButton, Divider, Grid } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
+import { Link as ScrollLink } from 'react-scroll';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import RoomIcon from '@mui/icons-material/Room';
 import PhoneIcon from '@mui/icons-material/Phone';
@@ -34,7 +35,7 @@ const Footer = () => {
                         <IconButton color="primary" href="https://facebook.com/fmsuspension" target="_blank" aria-label="Facebook" sx={{ bgcolor: '#fff', '&:hover': { bgcolor: theme.palette.primary.light } }}>
                             <FacebookIcon sx={{ color: theme.palette.primary.main }} />
                         </IconButton>
-                        <IconButton color="primary" href="https://instagram.com/fmsuspension" target="_blank" aria-label="Instagram" sx={{ bgcolor: '#fff', '&:hover': { bgcolor: theme.palette.primary.light } }}>
+                        <IconButton color="primary" href="https://www.instagram.com/fm_suspension/" target="_blank" aria-label="Instagram" sx={{ bgcolor: '#fff', '&:hover': { bgcolor: theme.palette.primary.light } }}>
                             <InstagramIcon sx={{ color: theme.palette.primary.main }} />
                         </IconButton>
                         <IconButton color="primary" href="https://wa.me/5492236003351" target="_blank" aria-label="WhatsApp" sx={{ bgcolor: '#fff', '&:hover': { bgcolor: theme.palette.primary.light } }}>
@@ -64,10 +65,23 @@ const Footer = () => {
                         Enlaces útiles
                     </Typography>
                     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-                        <Link href="#services" color="inherit" underline="hover" sx={{ fontSize: 17, opacity: 0.85 }}>Servicios</Link>
-                        <Link href="#promotions" color="inherit" underline="hover" sx={{ fontSize: 17, opacity: 0.85 }}>Promociones</Link>
-                        <Link href="#testimonials" color="inherit" underline="hover" sx={{ fontSize: 17, opacity: 0.85 }}>Testimonios</Link>
-                        <Link href="#contact" color="inherit" underline="hover" sx={{ fontSize: 17, opacity: 0.85 }}>Contacto</Link>
+                        {[
+                          { label: 'Servicios', to: 'services' },
+                          { label: 'Promociones', to: 'promociones' },
+                          { label: 'Testimonios', to: 'testimonials' },
+                          { label: 'Contacto', to: 'contact' },
+                        ].map(({ label, to }) => (
+                          <ScrollLink
+                            key={to}
+                            to={to}
+                            smooth
+                            duration={500}
+                            offset={-70}
+                            style={{ color: '#fff', fontSize: 17, opacity: 0.85, cursor: 'pointer', textDecoration: 'underline' }}
+                          >
+                            {label}
+                          </ScrollLink>
+                        ))}
                     </Box>
                 </Grid>
             </Grid>

@@ -5,6 +5,11 @@ import CloseIcon from '@mui/icons-material/Close';
 import { Link } from 'react-scroll';
 import banerfm from '../assets/banerfm.png';
 
+const NAV_ACTIVE_STYLE = {
+  color: '#E53935',
+  borderBottom: '2px solid #E53935',
+};
+
 const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const isMobile = useMediaQuery('(max-width:900px)');
@@ -12,8 +17,11 @@ const Navbar = () => {
   const sections = [
     { label: 'Inicio', to: 'inicio' },
     { label: 'Servicios', to: 'services' },
+    { label: 'Promociones', to: 'promociones' },
+    { label: 'Nosotros', to: 'sobre-nosotros' },
     { label: 'Testimonios', to: 'testimonials' },
     { label: 'Contacto', to: 'contact' },
+    { label: 'Ubicaci\u00f3n', to: 'ubicacion' },
   ];
 
   const handleDrawerToggle = () => {
@@ -54,16 +62,18 @@ const Navbar = () => {
                 </IconButton>
               </Box>
               <List>
-                {sections.map((section, index) => (
-                  <ListItem key={index} disablePadding>
+                {sections.map((section) => (
+                  <ListItem key={section.to} disablePadding>
                     <ListItemButton onClick={handleDrawerToggle}>
                       <Link
                         to={section.to}
                         smooth
+                        spy
                         duration={500}
                         offset={-70}
+                        activeStyle={NAV_ACTIVE_STYLE}
                         style={{ color: '#fff', width: '100%', display: 'block', textDecoration: 'none', fontWeight: 500 }}
-                        aria-label={`Ir a sección ${section.label}`}
+                        aria-label={`Ir a secci\u00f3n ${section.label}`}
                       >
                         <ListItemText primary={section.label} />
                       </Link>
@@ -74,16 +84,18 @@ const Navbar = () => {
             </Drawer>
           </>
         ) : (
-          <Box sx={{ display: 'flex', gap: 2 }}>
-            {sections.map((section, index) => (
-              <Button key={index} color="inherit" sx={{ fontWeight: 600, fontSize: 16 }}>
-                <Link 
+          <Box sx={{ display: 'flex', gap: 1 }}>
+            {sections.map((section) => (
+              <Button key={section.to} color="inherit" sx={{ fontWeight: 600, fontSize: 15, px: 1.5 }}>
+                <Link
                   to={section.to}
                   smooth
+                  spy
                   duration={500}
                   offset={-70}
-                  style={{ color: '#FFFFFF', textDecoration: 'none' }}
-                  aria-label={`Ir a sección ${section.label}`}
+                  activeStyle={NAV_ACTIVE_STYLE}
+                  style={{ color: '#FFFFFF', textDecoration: 'none', paddingBottom: 2 }}
+                  aria-label={`Ir a secci\u00f3n ${section.label}`}
                 >
                   {section.label}
                 </Link>

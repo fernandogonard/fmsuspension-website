@@ -1,6 +1,10 @@
 import React from 'react';
 import { Paper, Avatar, Box, Typography, useTheme } from '@mui/material';
-import Carousel from 'react-material-ui-carousel';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 import PersonIcon from '@mui/icons-material/Person';
 import { keyframes } from '@mui/system';
 
@@ -28,15 +32,19 @@ const TestimonialsSection = () => {
             >
                 Opiniones de nuestros clientes
             </Typography>
-            <Carousel
-                indicators={false}
-                navButtonsAlwaysVisible={true}
-                sx={{ width: '100%', maxWidth: 600, mx: 'auto' }}
+            <Swiper
+                modules={[Navigation, Pagination, Autoplay]}
+                spaceBetween={20}
+                slidesPerView={1}
+                navigation
+                pagination={{ clickable: true }}
+                autoplay={{ delay: 5000, disableOnInteraction: false }}
+                style={{ width: '100%', maxWidth: 600, margin: '0 auto', paddingBottom: 40 }}
                 aria-label="Testimonios de clientes"
             >
                 {testimonials.map((testimonial, index) => (
+                    <SwiperSlide key={testimonial.name}>
                     <Paper
-                        key={index}
                         sx={{
                             p: { xs: 3, md: 4 },
                             background: '#353535',
@@ -81,8 +89,9 @@ const TestimonialsSection = () => {
                             </Typography>
                         </Box>
                     </Paper>
+                    </SwiperSlide>
                 ))}
-            </Carousel>
+            </Swiper>
         </Box>
     );
 };

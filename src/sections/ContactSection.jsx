@@ -26,20 +26,26 @@ const ContactSection = () => {
         e.preventDefault();
         const { nombre, email, mensaje } = formData;
 
-        // Validación de campos
         if (!nombre || !email || !mensaje) {
             setSnackbar({ open: true, message: 'Por favor, completa todos los campos.', severity: 'warning' });
+            return;
+        }
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            setSnackbar({ open: true, message: 'Por favor, ingres\u00e1 un email v\u00e1lido.', severity: 'warning' });
             return;
         }
 
         const mensajeWhatsapp = `Hola, soy ${nombre}. Mi correo es: ${email}. Mensaje: ${mensaje}`;
         const whatsappUrl = `https://api.whatsapp.com/send?phone=+5492236003351&text=${encodeURIComponent(mensajeWhatsapp)}`;
         window.open(whatsappUrl, '_blank');
+        setFormData({ nombre: '', email: '', mensaje: '' });
         setSnackbar({ open: true, message: 'Redirigiendo a WhatsApp...', severity: 'success' });
     };
 
     return (
-        <section id="contact" className="contact-section" style={{ background: '#232323', padding: '40px 0', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <section id="contact" className="contact-section" style={{ background: '#232323', padding: '60px 0', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <Box display="flex" justifyContent="center" alignItems="center" width="100%" minHeight={{ xs: 'auto', md: '60vh' }}>
                 <Paper elevation={6} sx={{ p: 4, maxWidth: 420, width: '100%', bgcolor: 'background.paper', color: 'text.primary' }}>
                     <Typography variant="h5" component="h2" gutterBottom align="center" color="primary">

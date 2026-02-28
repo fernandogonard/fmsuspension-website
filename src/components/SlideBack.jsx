@@ -2,9 +2,7 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper/modules';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMapMarkerAlt, faCogs } from '@fortawesome/free-solid-svg-icons'; 
-import { Helmet } from 'react-helmet-async'; 
+import { FaMapMarkerAlt, FaCogs } from 'react-icons/fa';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -30,22 +28,16 @@ const slidesData = [
   { image: image8, alt: 'Reparación de neumáticos para Nissan Versa en FMSuspensión - Servicios de alineación y balanceo de alta calidad.' },
 ];
 
-const phoneNumber = "+5492236003351"; 
-const whatsappMessage = "Hola, estoy interesado en los servicios de FMSuspensión.";
+const phoneNumber = "+5492236003351";
 
 const SlideBack = () => {
   const handleServiceRequest = (service) => {
-    alert(`Solicitud de servicio: ${service}`);
+    const msg = `Hola, estoy interesado en el servicio de ${service} en FMSuspensión.`;
+    window.open(`https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(msg)}`, '_blank');
   };
 
   return (
     <div className="slide-back" role="region" aria-label="Presentación de servicios">
-      <Helmet>
-        <title>Servicios de FMSuspensión - Mar del Plata</title>
-        <meta name="description" content="Servicios de alineación, balanceo y mecánica en Mar del Plata, ubicados en Ituzaingó 5848. Experiencia y confianza en el cuidado de tu auto." />
-        <link href="https://fmsuspension.netlify.app/" rel="canonical" />
-      </Helmet>
-
       <Swiper
   modules={[Navigation, Pagination, EffectFade, Autoplay]}
   spaceBetween={30}
@@ -66,7 +58,8 @@ const SlideBack = () => {
               src={slide.image}
               alt={slide.alt}
               className="slide-back__image"
-              loading="lazy"
+              loading={index === 0 ? 'eager' : 'lazy'}
+              fetchpriority={index === 0 ? 'high' : 'auto'}
             />
           </SwiperSlide>
         ))}
@@ -75,7 +68,7 @@ const SlideBack = () => {
       <div className="slide-back__content">
         <h1>FM SUSPENSION</h1>
         <p>
-          <FontAwesomeIcon icon={faMapMarkerAlt} className="location-icon" />
+          <FaMapMarkerAlt className="location-icon" />
           Ituzaingó 5848, Mar del Plata
         </p>
         <p>Desde hace más de 15 años solucionando las necesidades de tu auto.</p>
@@ -89,7 +82,7 @@ const SlideBack = () => {
               onClick={() => handleServiceRequest(service)}
               tabIndex={0}
             >
-              <FontAwesomeIcon icon={faCogs} className="arrow-icon" />
+              <FaCogs className="arrow-icon" />
               {service}
             </button>
           ))}
