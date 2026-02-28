@@ -3,7 +3,7 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, EffectFade, Autoplay } from 'swiper/modules';
 import { FaMapMarkerAlt, FaCogs } from 'react-icons/fa';
-import { PHONE_NUMBER, whatsappLink, ADDRESS } from '../config/constants';
+import { whatsappLink, ADDRESS } from '../config/constants';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';

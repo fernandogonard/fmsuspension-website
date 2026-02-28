@@ -76,8 +76,6 @@ const PromotionsSection = () => {
                                 variant="contained"
                                 color="primary"
                                 href={promo.buttonLink}
-                                target="_blank"
-                                rel="noopener noreferrer"
                                 sx={{
                                     mt: 2,
                                     fontWeight: 700,
@@ -89,8 +87,6 @@ const PromotionsSection = () => {
                                     transition: 'background 0.3s, color 0.3s',
                                     '&:hover': { backgroundColor: '#fff', color: '#E53935' },
                                 }}
-                                target="_blank"
-                                rel="noopener noreferrer"
                             >
                                 {promo.buttonText}
                             </Button>
