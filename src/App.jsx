@@ -118,7 +118,7 @@ function App() {
 
                     <Element name="ubicacion">
                         <Box sx={{ py: { xs: 5, md: 8 }, maxWidth: 900, mx: 'auto', bgcolor: '#232323', borderRadius: 4, my: 4, boxShadow: 3, minHeight: '1px' }}>
-                            <Typography variant="h4" align="center" color="primary" sx={{ fontWeight: 'bold', mb: 4 }}>
+                            <Typography variant="h4" component="h3" align="center" color="primary" sx={{ fontWeight: 'bold', mb: 4 }}>
                                 Dónde encontrarnos
                             </Typography>
                             <MapContainer />

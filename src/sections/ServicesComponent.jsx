@@ -93,7 +93,7 @@ const ServicesComponent = () => {
               >
                 {service.icon}
               </Box>
-              <Typography variant="h6" sx={{ fontWeight: 700, mb: 1, color: 'primary.main', fontSize: 22 }}>
+              <Typography variant="h6" component="h4" sx={{ fontWeight: 700, mb: 1, color: 'primary.main', fontSize: 22 }}>
                 {service.title}
               </Typography>
               <Typography variant="body1" color="#e0e0e0" sx={{ fontSize: 16, lineHeight: 1.5 }}>

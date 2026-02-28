@@ -56,6 +56,8 @@ const SlideBack = () => {
               src={slide.image}
               alt={slide.alt}
               className="slide-back__image"
+              width="1280"
+              height="720"
               loading={index === 0 ? 'eager' : 'lazy'}
               fetchpriority={index === 0 ? 'high' : 'auto'}
             />

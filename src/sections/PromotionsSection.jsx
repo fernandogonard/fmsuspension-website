@@ -66,7 +66,7 @@ const PromotionsSection = () => {
                             role="article"
                             aria-labelledby={`promo-title-${index}`}
                         >
-                            <Typography variant="h6" color="primary" id={`promo-title-${index}`} sx={{ fontWeight: 'bold', mb: 1, fontSize: 22 }}>
+                            <Typography variant="h6" component="h4" color="primary" id={`promo-title-${index}`} sx={{ fontWeight: 'bold', mb: 1, fontSize: 22 }}>
                                 {promo.title}
                             </Typography>
                             <Typography variant="body1" color="#e0e0e0" sx={{ fontSize: 16, lineHeight: 1.5, mb: 2 }}>

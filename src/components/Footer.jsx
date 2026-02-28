@@ -75,6 +75,7 @@ const Footer = () => {
                           <ScrollLink
                             key={to}
                             to={to}
+                            href={`#${to}`}
                             smooth
                             duration={500}
                             offset={-70}

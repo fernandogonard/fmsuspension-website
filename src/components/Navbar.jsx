@@ -34,9 +34,8 @@ const Navbar = () => {
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <img 
             src={banerfm} 
-            alt="Banner de FMSuspensión - Servicios de suspensión" 
+            alt="Logo de FMSuspensión - Servicios de suspensión" 
             style={{ height: 50, width: 'auto', maxWidth: 200, objectFit: 'cover' }} 
-            aria-label="Logo de FMSuspensión"
           />
         </Box>
         {isMobile ? (
@@ -67,13 +66,14 @@ const Navbar = () => {
                     <ListItemButton onClick={handleDrawerToggle}>
                       <Link
                         to={section.to}
+                        href={`#${section.to}`}
                         smooth
                         spy
                         duration={500}
                         offset={-70}
                         activeStyle={NAV_ACTIVE_STYLE}
                         style={{ color: '#fff', width: '100%', display: 'block', textDecoration: 'none', fontWeight: 500 }}
-                        aria-label={`Ir a secci\u00f3n ${section.label}`}
+                        aria-label={`Ir a sección ${section.label}`}
                       >
                         <ListItemText primary={section.label} />
                       </Link>
@@ -89,13 +89,14 @@ const Navbar = () => {
               <Button key={section.to} color="inherit" sx={{ fontWeight: 600, fontSize: 15, px: 1.5 }}>
                 <Link
                   to={section.to}
+                  href={`#${section.to}`}
                   smooth
                   spy
                   duration={500}
                   offset={-70}
                   activeStyle={NAV_ACTIVE_STYLE}
                   style={{ color: '#FFFFFF', textDecoration: 'none', paddingBottom: 2 }}
-                  aria-label={`Ir a secci\u00f3n ${section.label}`}
+                  aria-label={`Ir a sección ${section.label}`}
                 >
                   {section.label}
                 </Link>
